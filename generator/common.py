@@ -7,6 +7,7 @@ frame() wraps that in the shared terminal look and returns the final SVG text.
 import json
 import math
 import random
+import re
 import subprocess
 from datetime import date, datetime, timedelta, timezone
 
@@ -116,7 +117,57 @@ def starfield(w, h, seed, count, top_clear=84, left_clear=520):
     return "".join(out)
 
 
-def frame(chart):
+THEMES = {
+    "mono": "#ffffff",
+    "ice": "#7dd3fc",
+    "ember": "#fb923c",
+    "matrix": "#4ade80",
+    "sakura": "#f9a8d4",
+    "violet": "#c4b5fd",
+}
+
+# the neutral colors the styles draw with, and how strongly each one picks up the accent
+NEUTRALS = {
+    "#d4d4d8": 0.30,  # body text
+    "#9a9aa1": 0.25,  # dim text
+    "#2a2a2d": 0.18,  # lines
+    "#1b1b1e": 0.10,  # empty bar ticks
+    "#111113": 0.06,  # panel
+    "#0b0b0c": 0.05,  # background
+    "#08080a": 0.05,  # ridgeline fill
+    "#050507": 0.05,  # sky
+}
+
+
+def _rgb(h):
+    h = h.lstrip("#")
+    return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
+
+
+def _mix(base, tint, t):
+    a, b = _rgb(base), _rgb(tint)
+    return "#" + "".join(f"{round(a[i] * (1 - t) + b[i] * t):02x}" for i in range(3))
+
+
+def apply_theme(svg, accent):
+    """Recolor a finished SVG: white becomes the accent, the greys pick up a little of it."""
+    if accent.lower() in ("#fff", "#ffffff"):
+        return svg
+    pairs = {"#ffffff": accent, "#fff": accent}
+    pairs.update({k: _mix(k, accent, t) for k, t in NEUTRALS.items()})
+    return re.sub(
+        r"#(?:ffffff|fff|d4d4d8|9a9aa1|2a2a2d|1b1b1e|111113|0b0b0c|08080a|050507)(?![0-9a-fA-F])",
+        lambda m: pairs[m.group(0).lower()],
+        svg,
+    )
+
+
+def frame(chart, accent="#ffffff"):
+    """The shared terminal frame around a style's output, recolored for the theme."""
+    return apply_theme(_frame(chart), accent)
+
+
+def _frame(chart):
     """Wrap a style's output in the shared terminal frame and return the SVG text."""
     w, h = chart["w"], chart["h"]
     head = (
