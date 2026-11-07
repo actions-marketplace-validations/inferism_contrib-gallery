@@ -75,7 +75,7 @@ def render(days):
         f'<text x="420" y="{H - 10}" class="dim" font-size="14">&gt; {total:,} XP earned this year, +{last30} in the last 30 days</text>'
     )
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "top": 120,
         "title": "character-sheet", "cmd": "stats --last 365d",
         "aria": f"RPG character sheet: level {lv} {_title(lv)} with a {cur} day streak and {total:,} contributions",
     }

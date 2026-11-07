@@ -64,6 +64,27 @@ Every style comes in six color themes: `mono` (default), `ice`, `ember`, `matrix
 
 Want your own color? Use `accent: "#ff66aa"` instead of `theme`.
 
+## Make it fit your profile
+
+The default look is a dark terminal panel with a border and corner brackets. If your README looks different, change it with these inputs:
+
+| Input | Values | What it does |
+|---|---|---|
+| `mode` | `dark` (default), `light` | `light` draws dark ink, for light READMEs |
+| `frame` | `terminal` (default), `none` | `none` drops the border, corner brackets and dots, and matches GitHub's own page color so the chart blends in |
+| `header` | `show` (default), `hide` | `hide` removes the title lines at the top |
+
+```yaml
+- uses: inferism/contrib-gallery@main
+  with:
+    style: skyline
+    mode: light
+    frame: none
+    header: hide
+```
+
+The gallery previews show the default look. These options are applied when your workflow generates the chart.
+
 ## Styles ready to use
 
 | Style | Name to use | What it shows |

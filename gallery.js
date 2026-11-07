@@ -27,7 +27,11 @@ let theme='mono',ACC=[255,255,255],current=null;
 const sampleUrl=id=>`samples/${theme}/${id}.svg`;
 
 function workflowFor(id,th){
-  const line=th&&th!=='mono'?`\n          theme: ${th}`:'';
+  /* the chosen theme is set; the other options are left as commented hints */
+  const line=['\n          '+(th&&th!=='mono'?`theme: ${th}`:'# theme: ice'),
+    '\n          # mode: light      # for light READMEs',
+    '\n          # frame: none      # no border or corner brackets',
+    '\n          # header: hide     # hide the title lines'].join('');
   return `name: Contribution chart
 on:
   schedule:

@@ -25,6 +25,10 @@ def main():
     ap.add_argument("--username", default=os.environ.get("CONTRIB_USERNAME", ""))
     ap.add_argument("--theme", default="mono", help=f"color theme: {', '.join(common.THEMES)}")
     ap.add_argument("--accent", default="", help="custom accent color like #ff66aa (overrides --theme)")
+    ap.add_argument("--mode", default="dark", choices=["dark", "light"], help="dark (default) or light, for light READMEs")
+    ap.add_argument("--frame", default="terminal", choices=["terminal", "none"],
+                    help="terminal (default) has a border and corner brackets; none blends into the page")
+    ap.add_argument("--header", default="show", choices=["show", "hide"], help="show or hide the title lines")
     ap.add_argument("--out", default="contrib-charts", help="folder for the SVG")
     ap.add_argument("--sample", action="store_true", help="use made-up data instead of GitHub")
     ap.add_argument("--list", action="store_true", help="list the available styles and themes")
@@ -60,7 +64,7 @@ def main():
         print("No contribution data returned.", file=sys.stderr)
         return 1
 
-    svg = common.frame(STYLES[a.style](days), accent)
+    svg = common.frame(STYLES[a.style](days), accent, a.mode, a.frame == "terminal", a.header == "show")
     os.makedirs(a.out, exist_ok=True)
     path = os.path.join(a.out, f"{a.style}.svg")
     with open(path, "w", encoding="utf8", newline="\n") as f:
