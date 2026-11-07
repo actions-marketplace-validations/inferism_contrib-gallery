@@ -1,0 +1,36 @@
+name: "contrib-gallery chart"
+description: "Generate a contribution graph style from contrib-gallery as an SVG file in your repo."
+author: "inferism"
+branding:
+  icon: "bar-chart-2"
+  color: "gray-dark"
+
+inputs:
+  style:
+    description: "Style name, for example spiral-galaxy"
+    required: true
+  username:
+    description: "GitHub user to chart. Defaults to the repository owner."
+    required: false
+    default: ${{ github.repository_owner }}
+  token:
+    description: "Token used to read contribution data"
+    required: false
+    default: ${{ github.token }}
+  output-dir:
+    description: "Folder the SVG is written to"
+    required: false
+    default: "contrib-charts"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Generate chart
+      shell: bash
+      env:
+        STYLE: ${{ inputs.style }}
+        CONTRIB_USERNAME: ${{ inputs.username }}
+        OUT_DIR: ${{ inputs.output-dir }}
+        GH_TOKEN: ${{ inputs.token }}
+        ACTION_PATH: ${{ github.action_path }}
+      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --out "$OUT_DIR"
