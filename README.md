@@ -107,13 +107,12 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Terrain mesh | `terrain-mesh` | A wireframe landscape where height is how busy you were |
 | Space invaders | `space-invaders` | Active days as invaders, busier days bigger |
 | RPG status | `rpg-status` | A character sheet: level, XP and stat bars |
-| Block world | `block-world` | A sandbox-style world, one column of blocks per day |
 | Dig site | `dig-site` | A cross-section of the ground, a shaft for every active week |
 | Obby course | `obby-course` | An obstacle course, a platform for every active week |
 | Block stack | `block-stack` | A falling-block puzzle, one stacked column per month |
 | Farm plots | `farm-plots` | A farm where every day is a plot and busy days grow ripe crops |
 
-The game styles are inspired by sandbox, digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
+The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
 
 The gallery also previews more styles that are not ready to use yet. Generators for them are coming.
 

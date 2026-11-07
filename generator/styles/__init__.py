@@ -1,6 +1,5 @@
 from . import (
     block_stack,
-    block_world,
     constellation,
     dig_site,
     farm_plots,
@@ -20,7 +19,6 @@ from . import (
 
 STYLES = {
     "block-stack": block_stack.render,
-    "block-world": block_world.render,
     "constellation": constellation.render,
     "dig-site": dig_site.render,
     "farm-plots": farm_plots.render,

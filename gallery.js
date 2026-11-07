@@ -14,7 +14,7 @@ const META={
   103:{id:'tree-growth',cat:'Nature'},104:{id:'ocean-waves',cat:'Nature'},
   105:{id:'space-invaders',cat:'Games'},106:{id:'rpg-status',cat:'Games'},
   107:{id:'skyline',cat:'3D'},108:{id:'terrain-mesh',cat:'3D'},
-  109:{id:'block-world',cat:'Games'},110:{id:'dig-site',cat:'Games'},111:{id:'obby-course',cat:'Games'},
+  110:{id:'dig-site',cat:'Games'},111:{id:'obby-course',cat:'Games'},
   112:{id:'block-stack',cat:'Games'},113:{id:'farm-plots',cat:'Games'}
 };
 /* styles that already have a generator you can use */
@@ -22,7 +22,7 @@ const READY=new Map([
   ['spiral-galaxy',428],['htop-monitor',514],['constellation',294],['ridgeline',510],
   ['vinyl-record',522],['piano-roll',288],['tree-growth',510],['ocean-waves',480],
   ['space-invaders',338],['rpg-status',314],['skyline',432],['terrain-mesh',366],
-  ['block-world',486],['dig-site',325],['obby-course',430],['block-stack',520],
+  ['dig-site',325],['obby-course',430],['block-stack',520],
   ['farm-plots',290]
 ]);
 const REPO='inferism/contrib-gallery';
@@ -568,7 +568,6 @@ card(105,'space invaders','Every active day is an invader. Busier days are bigge
 card(106,'RPG status','A character sheet built from your year: level, XP and stat bars like HP and mana.','');
 card(107,'3D skyline','A 3D city floating in space. One building per day, taller and brighter when you were busier.','');
 card(108,'terrain mesh','A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were.','');
-card(109,'block world','A sandbox-style world of blocks. Every day is a column, and busier days are taller towers.','');
 card(110,'dig site','A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom.','');
 card(111,'obby course','An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks.','');
 card(112,'block stack','A falling-block puzzle. One column per month, stacked as high as the month was busy.','');
