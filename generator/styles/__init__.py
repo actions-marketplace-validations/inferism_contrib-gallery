@@ -1,6 +1,11 @@
 from . import (
+    block_stack,
+    block_world,
     constellation,
+    dig_site,
+    farm_plots,
     htop_monitor,
+    obby_course,
     ocean_waves,
     piano_roll,
     ridgeline,
@@ -14,8 +19,13 @@ from . import (
 )
 
 STYLES = {
+    "block-stack": block_stack.render,
+    "block-world": block_world.render,
     "constellation": constellation.render,
+    "dig-site": dig_site.render,
+    "farm-plots": farm_plots.render,
     "htop-monitor": htop_monitor.render,
+    "obby-course": obby_course.render,
     "ocean-waves": ocean_waves.render,
     "piano-roll": piano_roll.render,
     "ridgeline": ridgeline.render,

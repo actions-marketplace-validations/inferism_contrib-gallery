@@ -20,10 +20,7 @@ def render(days):
         by_month.setdefault(d["date"][:7], []).append(d["count"])
     keys = sorted(by_month)[-12:]
     x0, x1 = 28, W - 28
-    out = [
-        '<circle cx="840" cy="150" r="44" fill="#fff" fill-opacity="0.12"/>'
-        '<circle cx="840" cy="150" r="30" fill="#fff" fill-opacity="0.9"/>'
-    ]
+    out = []
     for m, k in enumerate(keys):
         counts = by_month[k]
         base = 190 + m * 29
@@ -50,9 +47,13 @@ def render(days):
             f'<text x="34" y="{base + 18}" class="dim" font-size="13">{MONTHS[int(k[5:7]) - 1]}</text>'
         )
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{total:,} contributions · one wave per month · front waves are the newest</text>')
+    sun = (
+        '<circle cx="840" cy="150" r="44" fill="#fff" fill-opacity="0.12"/>'
+        '<circle cx="840" cy="150" r="30" fill="#fff" fill-opacity="0.9"/>'
+    )
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "deco": sun, "foot": 548, "top": 110,
+        "caption": f"{total:,} contributions · one wave per month · front waves are the newest",
         "title": "ocean", "cmd": "swell --last 365d  # one wave per month",
         "aria": f"Ocean waves, one wave per month, for {total:,} contributions in the last year",
     }

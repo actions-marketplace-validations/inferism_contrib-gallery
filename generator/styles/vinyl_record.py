@@ -47,9 +47,9 @@ def render(days):
         '<path d="M910 140L884 150L694 214" fill="none" stroke="#d4d4d8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
         '<rect x="672" y="206" width="28" height="12" rx="2" transform="rotate(-18.5 686 212)" fill="#fff"/>'
     )
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">one ring per month · peak {peak}/day</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "foot": 556, "top": 76,
+        "caption": f"one ring per month · peak {peak}/day",
         "title": "vinyl-record", "cmd": "play --last 365d  # one groove per month",
         "aria": f"Vinyl record with a ring of grooves for each month and {total:,} contributions in the last year",
     }

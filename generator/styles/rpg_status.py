@@ -70,12 +70,9 @@ def render(days):
             + _bar(530, y, val / cap)
             + f'<text x="972" y="{y}" text-anchor="end" class="hi" font-size="19" font-weight="700">{shown}</text>'
         )
-    out.append(
-        f'<line x1="420" y1="396" x2="972" y2="396" stroke="#2a2a2d" stroke-width="1.5" stroke-dasharray="2 5"/>'
-        f'<text x="420" y="{H - 10}" class="dim" font-size="14">&gt; {total:,} XP earned this year, +{last30} in the last 30 days</text>'
-    )
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "", "top": 120,
+        "w": W, "h": H, "body": "".join(out), "defs": "", "top": 120, "foot": 392,
+        "caption": f"{total:,} XP earned this year, +{last30} in the last 30 days",
         "title": "character-sheet", "cmd": "stats --last 365d",
         "aria": f"RPG character sheet: level {lv} {_title(lv)} with a {cur} day streak and {total:,} contributions",
     }

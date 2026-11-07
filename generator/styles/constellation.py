@@ -10,7 +10,7 @@ def render(days):
     peak = peak_of(days)
     rnd = random.Random(3)
     pos = grid_pos(days)
-    out = [starfield(W, H, 3, 150)]
+    out = []
     pts = []
     for i, (d, (w, dow)) in enumerate(zip(days, pos)):
         if d["count"] == 0:
@@ -25,9 +25,9 @@ def render(days):
         tw = f' class="tw" style="animation-delay:-{rnd.uniform(0, 4):.1f}s"' if k % 2 == 0 else ""
         out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{1.3 + c / peak * 4.2:.1f}" fill="#fff"{tw}/>')
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{len(pts)} active days · {total:,} contributions · peak {peak}/day</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "deco": starfield(W, H, 3, 150), "foot": 352, "top": 100,
+        "caption": f"{len(pts)} active days · {total:,} contributions · peak {peak}/day",
         "title": "constellation", "cmd": "render-sky --last 365d  # active days as stars",
         "aria": f"Constellation of {len(pts)} active days over the last year",
     }
