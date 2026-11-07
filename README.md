@@ -72,6 +72,14 @@ Want your own color? Use `accent: "#ff66aa"` instead of `theme`.
 | Htop monitor | `htop-monitor` | Monthly bars with percentages, like a system monitor |
 | Constellation | `constellation` | Active days as stars, joined into constellations |
 | Ridgeline | `ridgeline` | One jagged line per month, stacked on black |
+| Vinyl record | `vinyl-record` | One ring of grooves per month, every active day a blip |
+| Piano roll | `piano-roll` | Weekdays as piano keys, active days as notes |
+| Tree | `tree-growth` | A branch for every active week, a leaf for every active day |
+| Ocean waves | `ocean-waves` | One wave per month, stacked in the sea |
+| Space invaders | `space-invaders` | Active days as invaders, busier days bigger |
+| RPG status | `rpg-status` | A character sheet: level, XP and stat bars |
+| 3D skyline | `skyline` | A 3D city in space, one building per day |
+| Terrain mesh | `terrain-mesh` | A wireframe landscape where height is how busy you were |
 
 The gallery also previews many more styles (games, 3D, music and others). They are preview only for now, and generators for them are coming.
 
