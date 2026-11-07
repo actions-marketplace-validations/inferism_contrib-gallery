@@ -49,6 +49,9 @@ header.top p{margin:0;max-width:62ch;font-size:18px;color:var(--text)}
 .stage::before{top:-1px;left:-1px;border-right:0;border-bottom:0}
 .stage::after{right:-1px;bottom:-1px;border-left:0;border-top:0}
 .stage svg,.stage canvas{display:block;max-width:100%;height:auto}
+.card.ready{grid-column:1/-1;order:-1}
+.card.ready .stage{padding:0;min-height:0}
+.stage img{display:block;width:100%;height:auto}
 .stage pre{margin:0;max-width:100%;overflow:auto;color:var(--text);font-size:12px;line-height:1.2}
 .cloud{display:flex;flex-wrap:wrap;gap:4px 14px;justify-content:center;align-items:baseline;padding:10px;line-height:1.1}
 .tw{animation:tw 4s ease-in-out infinite}

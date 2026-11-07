@@ -12,7 +12,7 @@ const META={
   25:{id:'topographic-map',cat:'Nature'},26:{id:'dna-helix',cat:'3D'},27:{id:'barcode',cat:'Minimal'}
 };
 /* styles that already have a generator you can use */
-const READY=new Set([]);
+const READY=new Map([['spiral-galaxy',520],['htop-monitor',578],['constellation',400],['ridgeline',580]]);
 const REPO='inferism/contrib-gallery';
 
 function workflowFor(id){return `name: Contribution chart
@@ -67,7 +67,13 @@ function card(n,title,note,html){
   const tag=document.createElement('span');tag.className='tag'+(ready?' ok':'');tag.textContent=ready?'ready to use':'preview only';
   head.append(h,tag);
   const p=document.createElement('p');p.className='note';p.textContent=note;
-  const stage=document.createElement('div');stage.className='stage';stage.innerHTML=html;
+  const stage=document.createElement('div');stage.className='stage';
+  if(ready){
+    /* ready styles show the real generated sample, so the preview matches what you get */
+    el.classList.add('ready');
+    const img=document.createElement('img');img.src='samples/'+m.id+'.svg';img.width=1000;img.height=READY.get(m.id);
+    img.loading='lazy';img.alt=title+': '+note;stage.append(img);
+  }else stage.innerHTML=html;
   el.append(head,p,stage);
   if(ready){
     const d=document.createElement('details');d.className='use';
