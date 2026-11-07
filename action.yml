@@ -18,17 +18,25 @@ inputs:
     required: false
     default: ""
   mode:
-    description: "dark (default) or light, for light READMEs"
+    description: "auto (default) follows the viewer's light or dark setting, or dark or light"
     required: false
-    default: "dark"
+    default: "auto"
   frame:
-    description: "terminal (default) has a border and corner brackets; none blends into the page"
+    description: "none (default), simple, brackets or terminal"
     required: false
-    default: "terminal"
+    default: "none"
   header:
-    description: "show (default) or hide the title lines"
+    description: "none (default), title or terminal"
     required: false
-    default: "show"
+    default: "none"
+  details:
+    description: "hide (default) or show decorations and a stats line"
+    required: false
+    default: "hide"
+  background:
+    description: "Page color behind the chart, like #0a0a0a"
+    required: false
+    default: ""
   username:
     description: "GitHub user to chart. Defaults to the repository owner."
     required: false
@@ -54,8 +62,10 @@ runs:
         MODE: ${{ inputs.mode }}
         FRAME: ${{ inputs.frame }}
         HEADER: ${{ inputs.header }}
+        DETAILS: ${{ inputs.details }}
+        BACKGROUND: ${{ inputs.background }}
         CONTRIB_USERNAME: ${{ inputs.username }}
         OUT_DIR: ${{ inputs.output-dir }}
         GH_TOKEN: ${{ inputs.token }}
         ACTION_PATH: ${{ github.action_path }}
-      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --theme "$THEME" --accent "$ACCENT" --mode "$MODE" --frame "$FRAME" --header "$HEADER" --out "$OUT_DIR"
+      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --theme "$THEME" --accent "$ACCENT" --mode "$MODE" --frame "$FRAME" --header "$HEADER" --details "$DETAILS" --background "$BACKGROUND" --out "$OUT_DIR"

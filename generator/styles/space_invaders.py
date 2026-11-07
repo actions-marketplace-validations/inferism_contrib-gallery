@@ -24,7 +24,7 @@ def render(days):
         f'<symbol id="inva" viewBox="0 0 8 8"><path d="{_sprite(A)}"/></symbol>'
         f'<symbol id="invb" viewBox="0 0 8 8"><path d="{_sprite(B)}"/></symbol>'
     )
-    out = [starfield(W, H, 9, 90, top_clear=100, left_clear=620)]
+    out = []
     hits = []
     for d, (w, dow) in zip(days, pos):
         c = d["count"]
@@ -50,13 +50,14 @@ def render(days):
     )
     total = sum(d["count"] for d in days)
     active = len(hits)
-    out.append(
-        f'<text x="972" y="46" text-anchor="end" class="hi" font-size="20" font-weight="700">SCORE {total:,}</text>'
-        f'<text x="972" y="68" text-anchor="end" class="dim" font-size="14">HI {peak}</text>'
-        f'<text x="28" y="{H - 14}" class="dim" font-size="15">{active} invaders · bigger invaders are busier days</text>'
+    deco = (
+        starfield(W, H, 9, 90, top_clear=100, left_clear=620)
+        + f'<text x="972" y="46" text-anchor="end" class="hi" font-size="20" font-weight="700">SCORE {total:,}</text>'
+        + f'<text x="972" y="68" text-anchor="end" class="dim" font-size="14">HI {peak}</text>'
     )
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": defs, "top": 28,
+        "w": W, "h": H, "body": "".join(out), "defs": defs, "top": 100, "foot": 396, "deco": deco,
+        "caption": f"{active} invaders · bigger invaders are busier days",
         "title": "invaders", "cmd": "shoot --last 365d  # active days are invaders",
         "aria": f"Space invaders: {active} invaders for the active days of the last year, score {total:,}",
     }

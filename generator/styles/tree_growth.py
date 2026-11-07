@@ -50,9 +50,9 @@ def render(days):
     out.append(f'<circle cx="{cx}" cy="{top - 4}" r="5" fill="#fff"/>')
     weeks = sum(1 for t in tot if t)
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{weeks} branches · {total:,} contributions · oldest weeks at the roots</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "foot": 552, "top": 84,
+        "caption": f"{weeks} branches · {total:,} contributions · oldest weeks at the roots",
         "title": "tree", "cmd": "grow --last 365d  # a branch for every active week",
         "aria": f"Tree with {weeks} branches, one for each active week of the last year",
     }

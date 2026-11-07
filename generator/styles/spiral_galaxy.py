@@ -11,7 +11,7 @@ def render(days):
     n, peak = len(days), peak_of(days)
     rnd = random.Random(8)
     cx, cy = W / 2, 292
-    out = [starfield(W, H, 7, 190), f'<ellipse cx="{cx}" cy="{cy}" rx="105" ry="62" fill="url(#gcore)"/>']
+    out = [f'<ellipse cx="{cx}" cy="{cy}" rx="105" ry="62" fill="url(#gcore)"/>']
     for _ in range(300):  # faint dust around the arm
         a, d = rnd.uniform(0, math.tau), math.sqrt(rnd.random()) * 175
         out.append(
@@ -30,9 +30,9 @@ def render(days):
         else:
             out.append(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="0.8" fill="#fff" fill-opacity="0.16"/>')
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{total:,} contributions · peak {peak}/day · one star per day</text>')
     return {
-        "w": W, "h": H, "body": "".join(out),
+        "w": W, "h": H, "body": "".join(out), "deco": starfield(W, H, 7, 190), "foot": 486, "top": 100,
+        "caption": f"{total:,} contributions · peak {peak}/day · one star per day",
         "defs": '<radialGradient id="gcore"><stop offset="0" stop-color="#fff" stop-opacity="0.4"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>',
         "title": "spiral-galaxy", "cmd": "render-galaxy --last 365d  # one star per day",
         "aria": f"Spiral galaxy of {total:,} contributions over the last year, peak {peak} in a day",

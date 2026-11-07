@@ -45,9 +45,9 @@ def render(days):
             f'fill="#fff" fill-opacity="{0.4 + lv * 0.15:.2f}"/>'
         )
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{active} notes · {total:,} contributions · longer notes are busier days</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "foot": 342, "top": 96,
+        "caption": f"{active} notes · {total:,} contributions · longer notes are busier days",
         "title": "piano-roll", "cmd": "play --last 365d  # weekdays are keys, weeks go left to right",
         "aria": f"Piano roll with {active} notes for the active days of the last year",
     }

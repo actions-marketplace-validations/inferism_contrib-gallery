@@ -27,9 +27,9 @@ def render(days):
             f'<text x="28" y="{base + 4}" class="dim" font-size="13">{label}</text>'
         )
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{total:,} contributions · peak {peak}/day · one line per month</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "foot": 548, "top": 80,
+        "caption": f"{total:,} contributions · peak {peak}/day · one line per month",
         "title": "ridgeline", "cmd": "render-ridges --last 365d  # one line per month",
         "aria": f"Ridgeline chart of {total:,} contributions, one line per month",
     }

@@ -49,9 +49,9 @@ def render(days):
         )
         prev = pts
     total = sum(d["count"] for d in days)
-    out.append(f'<text x="28" y="{H - 22}" class="dim" font-size="15">{total:,} contributions · peak {peak}/day · higher ground is a busier day</text>')
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": "",
+        "w": W, "h": H, "body": "".join(out), "defs": "", "foot": 464, "top": 140,
+        "caption": f"{total:,} contributions · peak {peak}/day · higher ground is a busier day",
         "title": "terrain", "cmd": "render-terrain --last 365d  # height is how busy",
         "aria": f"Terrain mesh of {total:,} contributions over the last year, peak {peak} in a day",
     }
