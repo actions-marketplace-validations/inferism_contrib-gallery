@@ -9,10 +9,18 @@ const META={
   16:{id:'spiral-galaxy',cat:'Space'},17:{id:'solar-system',cat:'Space'},18:{id:'moon-phases',cat:'Space'},
   19:{id:'meteor-shower',cat:'Space'},20:{id:'git-graph',cat:'Dev'},21:{id:'matrix-rain',cat:'Dev'},
   22:{id:'hex-dump',cat:'Dev'},23:{id:'htop-monitor',cat:'Dev'},24:{id:'ridgeline',cat:'3D'},
-  25:{id:'topographic-map',cat:'Nature'},26:{id:'dna-helix',cat:'3D'},27:{id:'barcode',cat:'Minimal'}
+  25:{id:'topographic-map',cat:'Nature'},26:{id:'dna-helix',cat:'3D'},27:{id:'barcode',cat:'Minimal'},
+  101:{id:'vinyl-record',cat:'Music'},102:{id:'piano-roll',cat:'Music'},
+  103:{id:'tree-growth',cat:'Nature'},104:{id:'ocean-waves',cat:'Nature'},
+  105:{id:'space-invaders',cat:'Games'},106:{id:'rpg-status',cat:'Games'},
+  107:{id:'skyline',cat:'3D'},108:{id:'terrain-mesh',cat:'3D'}
 };
 /* styles that already have a generator you can use */
-const READY=new Map([['spiral-galaxy',520],['htop-monitor',578],['constellation',400],['ridgeline',580]]);
+const READY=new Map([
+  ['spiral-galaxy',520],['htop-monitor',578],['constellation',400],['ridgeline',580],
+  ['vinyl-record',580],['piano-roll',380],['tree-growth',600],['ocean-waves',580],
+  ['space-invaders',430],['rpg-status',430],['skyline',610],['terrain-mesh',510]
+]);
 const REPO='inferism/contrib-gallery';
 const THEMES={mono:'#ffffff',ice:'#7dd3fc',ember:'#fb923c',matrix:'#4ade80',sakura:'#f9a8d4',violet:'#c4b5fd'};
 let theme='mono',ACC=[255,255,255],current=null;
@@ -540,6 +548,16 @@ function anim(el,fn){anims.push({el,fn,on:false,n:0})}
   o+=`<text x="${W/2}" y="136" fill="#fff" font-size="13" letter-spacing="6" font-family="monospace" text-anchor="middle">INFERISM  2026  ${String(cnt.reduce((a,b)=>a+b,0)).padStart(5,'0')}</text><text x="${W/2}" y="156" fill="#85858b" font-size="10" font-family="monospace" text-anchor="middle">one bar per day, thicker when you were busier</text>`;
   card(27,'barcode','Your year as a product barcode. Thick bars are active days.',svg(W,H,o));
 })();
+
+/* styles that only exist as generators, so there is no live demo code for them */
+card(101,'vinyl record','A record with one ring of grooves per month. Every active day is a blip along its ring.','');
+card(102,'piano roll','Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days.','');
+card(103,'tree','A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day.','');
+card(104,'ocean waves','One wave per month, stacked in the sea. Taller swells are busier days.','');
+card(105,'space invaders','Every active day is an invader. Busier days are bigger, brighter invaders.','');
+card(106,'RPG status','A character sheet built from your year: level, XP and stat bars like HP and mana.','');
+card(107,'3D skyline','A 3D city floating in space. One building per day, taller and brighter when you were busier.','');
+card(108,'terrain mesh','A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were.','');
 
 buildTabs();
 buildThemes();
