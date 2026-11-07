@@ -56,7 +56,7 @@ def render(days):
         f'<text x="28" y="{H - 14}" class="dim" font-size="15">{active} invaders · bigger invaders are busier days</text>'
     )
     return {
-        "w": W, "h": H, "body": "".join(out), "defs": defs,
+        "w": W, "h": H, "body": "".join(out), "defs": defs, "top": 28,
         "title": "invaders", "cmd": "shoot --last 365d  # active days are invaders",
         "aria": f"Space invaders: {active} invaders for the active days of the last year, score {total:,}",
     }

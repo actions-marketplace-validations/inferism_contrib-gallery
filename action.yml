@@ -17,6 +17,18 @@ inputs:
     description: "Custom accent color like #ff66aa. Overrides theme."
     required: false
     default: ""
+  mode:
+    description: "dark (default) or light, for light READMEs"
+    required: false
+    default: "dark"
+  frame:
+    description: "terminal (default) has a border and corner brackets; none blends into the page"
+    required: false
+    default: "terminal"
+  header:
+    description: "show (default) or hide the title lines"
+    required: false
+    default: "show"
   username:
     description: "GitHub user to chart. Defaults to the repository owner."
     required: false
@@ -39,8 +51,11 @@ runs:
         STYLE: ${{ inputs.style }}
         THEME: ${{ inputs.theme }}
         ACCENT: ${{ inputs.accent }}
+        MODE: ${{ inputs.mode }}
+        FRAME: ${{ inputs.frame }}
+        HEADER: ${{ inputs.header }}
         CONTRIB_USERNAME: ${{ inputs.username }}
         OUT_DIR: ${{ inputs.output-dir }}
         GH_TOKEN: ${{ inputs.token }}
         ACTION_PATH: ${{ github.action_path }}
-      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --theme "$THEME" --accent "$ACCENT" --out "$OUT_DIR"
+      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --theme "$THEME" --accent "$ACCENT" --mode "$MODE" --frame "$FRAME" --header "$HEADER" --out "$OUT_DIR"
