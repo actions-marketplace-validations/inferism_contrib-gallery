@@ -41,14 +41,20 @@ header.top p{margin:0;max-width:62ch;font-size:18px;color:var(--text)}
 .themes button:hover{transform:scale(1.12)}
 .themes button[aria-pressed="true"]{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--sw)}
 
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:40px 24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:0 24px}
+/* each card spans four rows (title, note, chart, action) that line up across the whole grid row */
+.card{display:grid;grid-row:span 4;grid-template-rows:subgrid;row-gap:0;min-width:0;padding-bottom:40px}
 .card[hidden]{display:none}
 .card.ready{order:-1}
+@supports not (grid-template-rows:subgrid){
+  .grid{row-gap:40px}
+  .card{display:block;padding-bottom:0}
+}
 .card header{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:6px}
 .card h2{margin:0;color:var(--hi);font-size:19px;line-height:1.25;letter-spacing:-.01em}
 .tag{flex:none;font-size:12px;color:var(--dim);border:1.5px solid var(--line);border-radius:20px;padding:1px 10px}
 .tag.ok{color:#0b0b0c;background:var(--hi);border-color:var(--hi)}
-.note{margin:0 0 12px;color:var(--dim);font-size:14px;min-height:2.9em}
+.note{margin:0 0 12px;color:var(--dim);font-size:14px}
 
 .stage{position:relative;display:flex;align-items:center;justify-content:center;height:210px;padding:10px;overflow:hidden;
   background:var(--well) radial-gradient(rgba(255,255,255,.055) 1px,transparent 1.2px) 0 0/9px 9px;
