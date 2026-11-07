@@ -13,13 +13,17 @@ const META={
   101:{id:'vinyl-record',cat:'Music'},102:{id:'piano-roll',cat:'Music'},
   103:{id:'tree-growth',cat:'Nature'},104:{id:'ocean-waves',cat:'Nature'},
   105:{id:'space-invaders',cat:'Games'},106:{id:'rpg-status',cat:'Games'},
-  107:{id:'skyline',cat:'3D'},108:{id:'terrain-mesh',cat:'3D'}
+  107:{id:'skyline',cat:'3D'},108:{id:'terrain-mesh',cat:'3D'},
+  109:{id:'block-world',cat:'Games'},110:{id:'dig-site',cat:'Games'},111:{id:'obby-course',cat:'Games'},
+  112:{id:'block-stack',cat:'Games'},113:{id:'farm-plots',cat:'Games'}
 };
 /* styles that already have a generator you can use */
 const READY=new Map([
-  ['spiral-galaxy',520],['htop-monitor',578],['constellation',400],['ridgeline',580],
-  ['vinyl-record',580],['piano-roll',380],['tree-growth',600],['ocean-waves',580],
-  ['space-invaders',430],['rpg-status',430],['skyline',610],['terrain-mesh',510]
+  ['spiral-galaxy',428],['htop-monitor',514],['constellation',294],['ridgeline',510],
+  ['vinyl-record',522],['piano-roll',288],['tree-growth',510],['ocean-waves',480],
+  ['space-invaders',338],['rpg-status',314],['skyline',432],['terrain-mesh',366],
+  ['block-world',486],['dig-site',325],['obby-course',430],['block-stack',520],
+  ['farm-plots',290]
 ]);
 const REPO='inferism/contrib-gallery';
 const THEMES={mono:'#ffffff',ice:'#7dd3fc',ember:'#fb923c',matrix:'#4ade80',sakura:'#f9a8d4',violet:'#c4b5fd'};
@@ -29,9 +33,11 @@ const sampleUrl=id=>`samples/${theme}/${id}.svg`;
 function workflowFor(id,th){
   /* the chosen theme is set; the other options are left as commented hints */
   const line=['\n          '+(th&&th!=='mono'?`theme: ${th}`:'# theme: ice'),
-    '\n          # mode: light      # for light READMEs',
-    '\n          # frame: none      # no border or corner brackets',
-    '\n          # header: hide     # hide the title lines'].join('');
+    '\n          # mode: dark          # default is auto, which follows light or dark GitHub',
+    '\n          # frame: terminal     # default is none; also simple or brackets',
+    '\n          # header: terminal    # default is none; also title',
+    '\n          # details: show       # adds stars, decorations and a stats line',
+    '\n          # background: "#0a0a0a"   # match a custom page color'].join('');
   return `name: Contribution chart
 on:
   schedule:
@@ -113,7 +119,7 @@ function renderViewer(){
   if(!current)return;
   const box=document.getElementById('viewer-body');box.textContent='';
   const h=document.createElement('h2');h.id='viewer-title';h.textContent=current.title;
-  const p=document.createElement('p');p.className='note';p.textContent=current.note;
+  const p=document.createElement('p');p.className='note';p.textContent=current.note+' Shown on a dark page. By default your chart follows GitHub’s light or dark setting, with no frame, title or extras.';
   const img=document.createElement('img');img.className='full';img.src=sampleUrl(current.id);img.alt=current.title+': '+current.note;
   box.append(h,p,img,block('1.','.github/workflows/contrib-chart.yml',workflowFor(current.id,theme)),block('2.','README.md',readmeFor(current.id)));
 }
@@ -562,6 +568,11 @@ card(105,'space invaders','Every active day is an invader. Busier days are bigge
 card(106,'RPG status','A character sheet built from your year: level, XP and stat bars like HP and mana.','');
 card(107,'3D skyline','A 3D city floating in space. One building per day, taller and brighter when you were busier.','');
 card(108,'terrain mesh','A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were.','');
+card(109,'block world','A sandbox-style world of blocks. Every day is a column, and busier days are taller towers.','');
+card(110,'dig site','A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom.','');
+card(111,'obby course','An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks.','');
+card(112,'block stack','A falling-block puzzle. One column per month, stacked as high as the month was busy.','');
+card(113,'farm plots','A farm where every day is a plot. Busy days grow from a seed to a ripe crop.','');
 
 buildTabs();
 buildThemes();
