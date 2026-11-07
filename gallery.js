@@ -14,8 +14,13 @@ const META={
 /* styles that already have a generator you can use */
 const READY=new Map([['spiral-galaxy',520],['htop-monitor',578],['constellation',400],['ridgeline',580]]);
 const REPO='inferism/contrib-gallery';
+const THEMES={mono:'#ffffff',ice:'#7dd3fc',ember:'#fb923c',matrix:'#4ade80',sakura:'#f9a8d4',violet:'#c4b5fd'};
+let theme='mono',ACC=[255,255,255],current=null;
+const sampleUrl=id=>`samples/${theme}/${id}.svg`;
 
-function workflowFor(id){return `name: Contribution chart
+function workflowFor(id,th){
+  const line=th&&th!=='mono'?`\n          theme: ${th}`:'';
+  return `name: Contribution chart
 on:
   schedule:
     - cron: "0 18 * * *"
@@ -31,7 +36,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: ${REPO}@main
         with:
-          style: ${id}
+          style: ${id}${line}
       - name: Commit and push
         run: |
           git config user.name "\${{ github.repository_owner }}"
@@ -61,7 +66,7 @@ function block(label,file,text){
 function card(n,title,note,html){
   const m=META[n]||{id:'style-'+n,cat:'Minimal'},ready=READY.has(m.id);
   const el=document.createElement('article');
-  el.className='card';el.id=m.id;el.dataset.cat=m.cat;
+  el.className='card'+(ready?' ready':'');el.id=m.id;el.dataset.cat=m.cat;
   const head=document.createElement('header');
   const h=document.createElement('h2');h.textContent=title;
   const tag=document.createElement('span');tag.className='tag'+(ready?' ok':'');tag.textContent=ready?'ready to use':'preview only';
@@ -69,23 +74,67 @@ function card(n,title,note,html){
   const p=document.createElement('p');p.className='note';p.textContent=note;
   const stage=document.createElement('div');stage.className='stage';
   if(ready){
-    /* ready styles show the real generated sample, so the preview matches what you get */
-    el.classList.add('ready');
-    const img=document.createElement('img');img.src='samples/'+m.id+'.svg';img.width=1000;img.height=READY.get(m.id);
-    img.loading='lazy';img.alt=title+': '+note;stage.append(img);
+    /* ready styles show the real generated sample as a thumbnail; click for full size and snippets */
+    const b=document.createElement('button');b.type='button';b.className='thumb';
+    b.setAttribute('aria-label','Open '+title+' full size, with snippets');
+    const img=document.createElement('img');img.dataset.id=m.id;img.src=sampleUrl(m.id);
+    img.width=1000;img.height=READY.get(m.id);img.loading='lazy';img.alt=title+': '+note;
+    b.append(img);b.addEventListener('click',()=>openStyle(m.id,title,note));stage.append(b);
   }else stage.innerHTML=html;
   el.append(head,p,stage);
   if(ready){
-    const d=document.createElement('details');d.className='use';
-    const sm=document.createElement('summary');sm.textContent='Use this style';
-    d.append(sm,block('1.','.github/workflows/contrib-chart.yml',workflowFor(m.id)),block('2.','README.md',readmeFor(m.id)));
-    el.append(d);
+    const u=document.createElement('button');u.type='button';u.className='use-btn';u.textContent='Use this style';
+    u.addEventListener('click',()=>openStyle(m.id,title,note));el.append(u);
   }else{
-    const q=document.createElement('p');q.className='soon';q.textContent='Live preview only. The generator for this style is coming soon.';
-    el.append(q);
+    const q=document.createElement('p');q.className='soon';q.textContent='Live preview only. The generator for this style is coming soon.';el.append(q);
   }
   document.getElementById('grid').appendChild(el);
   return el;
+}
+
+/* full-size viewer with the snippets */
+function openStyle(id,title,note){
+  current={id,title,note};renderViewer();
+  const d=document.getElementById('viewer');if(!d.open)d.showModal();
+}
+function renderViewer(){
+  if(!current)return;
+  const box=document.getElementById('viewer-body');box.textContent='';
+  const h=document.createElement('h2');h.id='viewer-title';h.textContent=current.title;
+  const p=document.createElement('p');p.className='note';p.textContent=current.note;
+  const img=document.createElement('img');img.className='full';img.src=sampleUrl(current.id);img.alt=current.title+': '+current.note;
+  box.append(h,p,img,block('1.','.github/workflows/contrib-chart.yml',workflowFor(current.id,theme)),block('2.','README.md',readmeFor(current.id)));
+}
+function initViewer(){
+  const d=document.getElementById('viewer');
+  d.addEventListener('click',e=>{if(e.target===d)d.close()});
+  d.addEventListener('close',()=>{current=null});
+  d.querySelector('.close').addEventListener('click',()=>d.close());
+}
+
+/* color themes */
+function applyTheme(name){
+  if(!THEMES[name])name='mono';
+  theme=name;
+  const c=THEMES[name];
+  document.documentElement.style.setProperty('--hi',c);
+  ACC=[1,3,5].map(i=>parseInt(c.slice(i,i+2),16));
+  document.querySelectorAll('img[data-id]').forEach(i=>{i.src=sampleUrl(i.dataset.id)});
+  document.querySelectorAll('#themes button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.theme===name));
+  renderViewer();
+  try{localStorage.setItem('cg-theme',name)}catch(e){}
+}
+function buildThemes(){
+  const box=document.getElementById('themes');
+  const label=document.createElement('span');label.textContent='theme';box.append(label);
+  Object.entries(THEMES).forEach(([name,color])=>{
+    const b=document.createElement('button');b.type='button';b.dataset.theme=name;
+    b.style.setProperty('--sw',color);b.title=name;b.setAttribute('aria-label','Theme '+name);
+    b.addEventListener('click',()=>applyTheme(name));box.append(b);
+  });
+  let saved='mono';
+  try{saved=new URLSearchParams(location.search).get('theme')||localStorage.getItem('cg-theme')||'mono'}catch(e){}
+  applyTheme(saved);
 }
 
 /* category tabs */
@@ -95,7 +144,7 @@ function buildTabs(){
   function show(name){
     document.querySelectorAll('#tabs button').forEach(t=>{const on=t.dataset.cat===name;t.classList.toggle('on',on);t.setAttribute('aria-pressed',on)});
     document.querySelectorAll('.card').forEach(c=>c.hidden=!(name==='All'||c.dataset.cat===name));
-    history.replaceState(null,'',name==='All'?location.pathname:'#'+name);
+    history.replaceState(null,'',location.pathname+location.search+(name==='All'?'':'#'+name));
   }
   names.forEach(name=>{
     const b=document.createElement('button');b.type='button';
@@ -247,7 +296,7 @@ function anim(el,fn){anims.push({el,fn,on:false,n:0})}
   anim(el,()=>{
     f=(f+1)%260;let o='';
     for(let i=0;i<cols;i++){
-      const h=Math.max(0,Math.min(target[i],Math.floor((f-i*2.2)/3.5)));
+      const h=Math.max(0,Math.min(target[i],Math.floor((f-i*.8)/2.2)));
       for(let k=0;k<h;k++)o+=`<rect x="${(i*8.2+4).toFixed(1)}" y="${H-8-(k+1)*7}" width="${bs+.4}" height="${bs}" rx="1" fill="${k>h-3?'#fff':'#8e8e94'}"/>`;
     }
     g.innerHTML=o;
@@ -402,7 +451,7 @@ function anim(el,fn){anims.push({el,fn,on:false,n:0})}
     for(let i=0;i<cols;i++){
       const a=.15+weekTotals[i]/maxWeek*.85;
       if(drops[i]<0){drops[i]+=Math.random()*a*1.5;continue}
-      g.fillStyle=`rgba(255,255,255,${(.25+a*.7).toFixed(2)})`;
+      g.fillStyle=`rgba(${ACC[0]},${ACC[1]},${ACC[2]},${(.25+a*.7).toFixed(2)})`;
       g.fillText(chars[Math.floor(Math.random()*chars.length)],i*cw,drops[i]*11);
       if(drops[i]*11>H&&Math.random()>.94-a*.05)drops[i]=-Math.random()*12;else drops[i]+=.6+a*.7;
     }
@@ -493,6 +542,8 @@ function anim(el,fn){anims.push({el,fn,on:false,n:0})}
 })();
 
 buildTabs();
+buildThemes();
+initViewer();
 
 /* animation loop (~25 fps), only for cards that are on screen */
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;

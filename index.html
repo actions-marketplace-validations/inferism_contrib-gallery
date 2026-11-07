@@ -19,12 +19,19 @@
       <li>Push, then run the workflow once</li>
     </ol>
   </header>
-  <nav class="tabs" id="tabs" aria-label="Categories"></nav>
+  <div class="bar">
+    <nav class="tabs" id="tabs" aria-label="Categories"></nav>
+    <div class="themes" id="themes" role="group" aria-label="Color theme"></div>
+  </div>
   <main class="grid" id="grid"></main>
   <footer>
     MIT licensed. Source and issues on <a href="https://github.com/inferism/contrib-gallery">GitHub</a>.
   </footer>
 </div>
+<dialog id="viewer" aria-labelledby="viewer-title">
+  <button type="button" class="close" aria-label="Close">close</button>
+  <div id="viewer-body"></div>
+</dialog>
 <script src="gallery.js"></script>
 </body>
 </html>

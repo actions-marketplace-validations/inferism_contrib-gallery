@@ -49,7 +49,20 @@ Works in any repo, for example your profile repo (the one named after your usern
 
 3. In your repo, open **Settings, Actions, General, Workflow permissions** and choose **Read and write permissions**. Then open the **Actions** tab, pick the workflow, and click **Run workflow** once.
 
-Action inputs: `style` (required), `username` (default: the repository owner), `token` (default: the workflow token), `output-dir` (default: `contrib-charts`).
+Action inputs: `style` (required), `theme` (default: `mono`), `accent` (custom color like `#ff66aa`, overrides `theme`), `username` (default: the repository owner), `token` (default: the workflow token), `output-dir` (default: `contrib-charts`).
+
+## Themes
+
+Every style comes in six color themes: `mono` (default), `ice`, `ember`, `matrix`, `sakura` and `violet`. Pick one with the theme swatches on the gallery page, and the snippet updates to include it:
+
+```yaml
+- uses: inferism/contrib-gallery@main
+  with:
+    style: spiral-galaxy
+    theme: ice
+```
+
+Want your own color? Use `accent: "#ff66aa"` instead of `theme`.
 
 ## Styles ready to use
 
@@ -75,15 +88,15 @@ Needs Python 3. Real data also needs the [GitHub CLI](https://cli.github.com) si
 
 ```bash
 python generator/generate.py --list
-python generator/generate.py --style spiral-galaxy --sample --out samples      # made-up data
-python generator/generate.py --style spiral-galaxy --username YOU --out charts  # your data
+python generator/generate.py --style spiral-galaxy --sample --out charts                   # made-up data
+python generator/generate.py --style spiral-galaxy --theme ice --username YOU --out charts  # your data
 ```
 
 ## Add a style
 
 1. Create `generator/styles/your_style.py` with a `render(days)` function. `days` is a list of `{"date": "YYYY-MM-DD", "count": n}`. Return a dict with `w`, `h`, `body`, `defs`, `title`, `cmd` and `aria`. The existing styles are good examples.
 2. Register it in `generator/styles/__init__.py`.
-3. Generate its sample into `samples/` and add its id and image height to `READY` in `gallery.js`.
+3. Run `python generator/build_samples.py` to rebuild `samples/<theme>/<style>.svg` for every theme, then add the style's id and image height to `READY` in `gallery.js`.
 
 ## License
 

@@ -9,6 +9,14 @@ inputs:
   style:
     description: "Style name, for example spiral-galaxy"
     required: true
+  theme:
+    description: "Color theme: mono, ice, ember, matrix, sakura or violet"
+    required: false
+    default: "mono"
+  accent:
+    description: "Custom accent color like #ff66aa. Overrides theme."
+    required: false
+    default: ""
   username:
     description: "GitHub user to chart. Defaults to the repository owner."
     required: false
@@ -29,8 +37,10 @@ runs:
       shell: bash
       env:
         STYLE: ${{ inputs.style }}
+        THEME: ${{ inputs.theme }}
+        ACCENT: ${{ inputs.accent }}
         CONTRIB_USERNAME: ${{ inputs.username }}
         OUT_DIR: ${{ inputs.output-dir }}
         GH_TOKEN: ${{ inputs.token }}
         ACTION_PATH: ${{ github.action_path }}
-      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --out "$OUT_DIR"
+      run: python3 "$ACTION_PATH/generator/generate.py" --style "$STYLE" --theme "$THEME" --accent "$ACCENT" --out "$OUT_DIR"

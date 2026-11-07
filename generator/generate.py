@@ -2,6 +2,7 @@
 """Generate one contribution chart as an SVG.
 
   python generate.py --style spiral-galaxy --username you --out contrib-charts
+  python generate.py --style spiral-galaxy --theme ice --username you
   python generate.py --style spiral-galaxy --sample --out samples     (made-up data)
   python generate.py --list
 
@@ -22,16 +23,30 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--style", help="style name, see --list")
     ap.add_argument("--username", default=os.environ.get("CONTRIB_USERNAME", ""))
+    ap.add_argument("--theme", default="mono", help=f"color theme: {', '.join(common.THEMES)}")
+    ap.add_argument("--accent", default="", help="custom accent color like #ff66aa (overrides --theme)")
     ap.add_argument("--out", default="contrib-charts", help="folder for the SVG")
     ap.add_argument("--sample", action="store_true", help="use made-up data instead of GitHub")
-    ap.add_argument("--list", action="store_true", help="list the available styles")
+    ap.add_argument("--list", action="store_true", help="list the available styles and themes")
     a = ap.parse_args()
 
     if a.list:
-        print("\n".join(sorted(STYLES)))
+        print("styles: " + ", ".join(sorted(STYLES)))
+        print("themes: " + ", ".join(common.THEMES))
         return 0
     if not a.style or not re.fullmatch(r"[a-z0-9-]+", a.style) or a.style not in STYLES:
         print(f"Unknown style {a.style!r}. Available: {', '.join(sorted(STYLES))}", file=sys.stderr)
+        return 2
+
+    if a.accent:
+        if not re.fullmatch(r"#[0-9a-fA-F]{6}", a.accent):
+            print("--accent must look like #ff66aa", file=sys.stderr)
+            return 2
+        accent = a.accent
+    elif a.theme in common.THEMES:
+        accent = common.THEMES[a.theme]
+    else:
+        print(f"Unknown theme {a.theme!r}. Available: {', '.join(common.THEMES)}", file=sys.stderr)
         return 2
 
     if a.sample:
@@ -45,7 +60,7 @@ def main():
         print("No contribution data returned.", file=sys.stderr)
         return 1
 
-    svg = common.frame(STYLES[a.style](days))
+    svg = common.frame(STYLES[a.style](days), accent)
     os.makedirs(a.out, exist_ok=True)
     path = os.path.join(a.out, f"{a.style}.svg")
     with open(path, "w", encoding="utf8", newline="\n") as f:
