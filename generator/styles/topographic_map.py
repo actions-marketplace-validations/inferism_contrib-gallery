@@ -14,6 +14,11 @@ SEGMENTS = {
 }
 
 
+def _t(a, b, th):
+    """How far along an edge from a to b the contour at th crosses it (halfway on a flat edge)."""
+    return 0.5 if a == b else (th - a) / (b - a)
+
+
 def render(days):
     pos = grid_pos(days)
     weeks = max(w for w, _ in pos) + 1
@@ -47,8 +52,8 @@ def render(days):
                     continue
                 x, y = X0 + i * CELL, Y0 + j * CELL
                 edge = [
-                    (x + CELL * (th - tl) / (tr - tl), y), (x + CELL, y + CELL * (th - tr) / (br - tr)),
-                    (x + CELL * (th - bl) / (br - bl), y + CELL), (x, y + CELL * (th - tl) / (bl - tl)),
+                    (x + CELL * _t(tl, tr, th), y), (x + CELL, y + CELL * _t(tr, br, th)),
+                    (x + CELL * _t(bl, br, th), y + CELL), (x, y + CELL * _t(tl, bl, th)),
                 ]
                 for a, b in SEGMENTS[idx]:
                     path.append(f"M{edge[a][0]:.1f} {edge[a][1]:.1f}L{edge[b][0]:.1f} {edge[b][1]:.1f}")
