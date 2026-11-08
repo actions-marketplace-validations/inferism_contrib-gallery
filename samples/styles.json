@@ -59,7 +59,7 @@
   "id": "space-invaders",
   "title": "space invaders",
   "cat": "Games",
-  "note": "Every active day is an invader. Busier days are bigger, brighter invaders.",
+  "note": "Every active day is an invader. Busier days are bigger, brighter invaders. The ship slides across the bottom and fires.",
   "h": 338
  },
  {
@@ -94,7 +94,7 @@
   "id": "obby-course",
   "title": "obby course",
   "cat": "Games",
-  "note": "An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks.",
+  "note": "An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks, and a runner hops along them.",
   "h": 430
  },
  {
@@ -292,5 +292,40 @@
   "cat": "Space",
   "note": "One planet for each month orbiting a sun. Bigger planets are busier months.",
   "h": 592
+ },
+ {
+  "id": "lunar-craters",
+  "title": "lunar craters",
+  "cat": "Space",
+  "note": "The moon's surface from orbit. Every active day leaves a crater, bigger and deeper when busier.",
+  "h": 396
+ },
+ {
+  "id": "nebula",
+  "title": "nebula",
+  "cat": "Space",
+  "note": "A soft cloud of gas for every week, blending into one long nebula. Busier weeks are thicker and brighter.",
+  "h": 322
+ },
+ {
+  "id": "rocket-ascent",
+  "title": "rocket ascent",
+  "cat": "Space",
+  "note": "A rocket climbs one flight path, higher with every contribution. Each streak is a burning stage.",
+  "h": 418
+ },
+ {
+  "id": "exoplanet-light-curve",
+  "title": "exoplanet light curve",
+  "cat": "Space",
+  "note": "A telescope's brightness plot with a dot for every day. Busier days dip lower, like a planet crossing a star.",
+  "h": 402
+ },
+ {
+  "id": "space-station",
+  "title": "space station",
+  "cat": "Space",
+  "note": "A truss with a module docked for each active week. Busier weeks get bigger modules, and streaks add solar panels.",
+  "h": 302
  }
 ]
