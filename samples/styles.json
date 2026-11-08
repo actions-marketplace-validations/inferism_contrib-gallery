@@ -1,0 +1,114 @@
+[
+ {
+  "id": "spiral-galaxy",
+  "title": "spiral galaxy",
+  "cat": "Space",
+  "note": "Your year winds out from the center along a spiral arm. Brighter stars are busier days.",
+  "h": 428
+ },
+ {
+  "id": "constellation",
+  "title": "constellation",
+  "cat": "Space",
+  "note": "Active days are stars. Close days connect into constellations.",
+  "h": 294
+ },
+ {
+  "id": "htop-monitor",
+  "title": "htop monitor",
+  "cat": "Dev",
+  "note": "Months as system-monitor bars with percentages. Shows how busy each month was.",
+  "h": 514
+ },
+ {
+  "id": "ridgeline",
+  "title": "ridgeline mountains",
+  "cat": "3D",
+  "note": "One jagged line per month stacked on black, like the Unknown Pleasures album cover. Peaks are busy days.",
+  "h": 510
+ },
+ {
+  "id": "vinyl-record",
+  "title": "vinyl record",
+  "cat": "Music",
+  "note": "A record with one ring of grooves per month. Every active day is a blip along its ring.",
+  "h": 522
+ },
+ {
+  "id": "piano-roll",
+  "title": "piano roll",
+  "cat": "Music",
+  "note": "Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days.",
+  "h": 288
+ },
+ {
+  "id": "tree-growth",
+  "title": "tree",
+  "cat": "Nature",
+  "note": "A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day.",
+  "h": 510
+ },
+ {
+  "id": "ocean-waves",
+  "title": "ocean waves",
+  "cat": "Nature",
+  "note": "One wave per month, stacked in the sea. Taller swells are busier days.",
+  "h": 480
+ },
+ {
+  "id": "space-invaders",
+  "title": "space invaders",
+  "cat": "Games",
+  "note": "Every active day is an invader. Busier days are bigger, brighter invaders.",
+  "h": 338
+ },
+ {
+  "id": "rpg-status",
+  "title": "RPG status",
+  "cat": "Games",
+  "note": "A character sheet built from your year: level, XP and stat bars like HP and mana.",
+  "h": 314
+ },
+ {
+  "id": "skyline",
+  "title": "3D skyline",
+  "cat": "3D",
+  "note": "A 3D city floating in space. One building per day, taller and brighter when you were busier.",
+  "h": 432
+ },
+ {
+  "id": "terrain-mesh",
+  "title": "terrain mesh",
+  "cat": "3D",
+  "note": "A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were.",
+  "h": 366
+ },
+ {
+  "id": "dig-site",
+  "title": "dig site",
+  "cat": "Games",
+  "note": "A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom.",
+  "h": 325
+ },
+ {
+  "id": "obby-course",
+  "title": "obby course",
+  "cat": "Games",
+  "note": "An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks.",
+  "h": 430
+ },
+ {
+  "id": "block-stack",
+  "title": "block stack",
+  "cat": "Games",
+  "note": "A falling-block puzzle. One column per month, stacked as high as the month was busy.",
+  "h": 520
+ },
+ {
+  "id": "farm-plots",
+  "title": "farm plots",
+  "cat": "Games",
+  "note": "A farm where every day is a plot. Busy days grow from a seed to a ripe crop.",
+  "h": 290
+ }
+]

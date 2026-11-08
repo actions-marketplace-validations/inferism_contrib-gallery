@@ -93,24 +93,26 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 
 ## Styles ready to use
 
+<!-- styles:start -->
 | Style | Name to use | What it shows |
 |---|---|---|
-| Spiral galaxy | `spiral-galaxy` | One star per day on a spiral arm, brighter when busier |
-| Htop monitor | `htop-monitor` | Monthly bars with percentages, like a system monitor |
-| Constellation | `constellation` | Active days as stars, joined into constellations |
-| Ridgeline | `ridgeline` | One jagged line per month, stacked |
-| Vinyl record | `vinyl-record` | One ring of grooves per month, every active day a blip |
-| Piano roll | `piano-roll` | Weekdays as piano keys, active days as notes |
-| Tree | `tree-growth` | A branch for every active week, a leaf for every active day |
-| Ocean waves | `ocean-waves` | One wave per month, stacked in the sea |
-| 3D skyline | `skyline` | A 3D city, one building per day |
-| Terrain mesh | `terrain-mesh` | A wireframe landscape where height is how busy you were |
-| Space invaders | `space-invaders` | Active days as invaders, busier days bigger |
-| RPG status | `rpg-status` | A character sheet: level, XP and stat bars |
-| Dig site | `dig-site` | A cross-section of the ground, a shaft for every active week |
-| Obby course | `obby-course` | An obstacle course, a platform for every active week |
-| Block stack | `block-stack` | A falling-block puzzle, one stacked column per month |
-| Farm plots | `farm-plots` | A farm where every day is a plot and busy days grow ripe crops |
+| Spiral galaxy | `spiral-galaxy` | Your year winds out from the center along a spiral arm. Brighter stars are busier days. |
+| Constellation | `constellation` | Active days are stars. Close days connect into constellations. |
+| Htop monitor | `htop-monitor` | Months as system-monitor bars with percentages. Shows how busy each month was. |
+| Ridgeline mountains | `ridgeline` | One jagged line per month stacked on black, like the Unknown Pleasures album cover. Peaks are busy days. |
+| Vinyl record | `vinyl-record` | A record with one ring of grooves per month. Every active day is a blip along its ring. |
+| Piano roll | `piano-roll` | Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days. |
+| Tree | `tree-growth` | A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day. |
+| Ocean waves | `ocean-waves` | One wave per month, stacked in the sea. Taller swells are busier days. |
+| Space invaders | `space-invaders` | Every active day is an invader. Busier days are bigger, brighter invaders. |
+| RPG status | `rpg-status` | A character sheet built from your year: level, XP and stat bars like HP and mana. |
+| 3D skyline | `skyline` | A 3D city floating in space. One building per day, taller and brighter when you were busier. |
+| Terrain mesh | `terrain-mesh` | A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were. |
+| Dig site | `dig-site` | A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom. |
+| Obby course | `obby-course` | An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks. |
+| Block stack | `block-stack` | A falling-block puzzle. One column per month, stacked as high as the month was busy. |
+| Farm plots | `farm-plots` | A farm where every day is a plot. Busy days grow from a seed to a ripe crop. |
+<!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
 
