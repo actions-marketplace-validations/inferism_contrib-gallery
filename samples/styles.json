@@ -229,5 +229,68 @@
   "cat": "3D",
   "note": "Two twisting strands with a rung for every active day.",
   "h": 226
+ },
+ {
+  "id": "pulse-line",
+  "title": "pulse line",
+  "cat": "Minimal",
+  "note": "A heartbeat monitor with a spike for every active day. The bright pulse keeps scanning along.",
+  "h": 201
+ },
+ {
+  "id": "equalizer",
+  "title": "equalizer",
+  "cat": "Music",
+  "note": "One bar per week that bounces like an audio equalizer, taller for busier weeks.",
+  "h": 284
+ },
+ {
+  "id": "snake",
+  "title": "snake",
+  "cat": "Games",
+  "note": "A snake eats its way across the year, one active day at a time, and starts over at the end.",
+  "h": 195
+ },
+ {
+  "id": "pac-man",
+  "title": "pac-man",
+  "cat": "Games",
+  "note": "A chomping circle eats the days one row at a time, left to right and back again.",
+  "h": 250
+ },
+ {
+  "id": "falling-blocks",
+  "title": "falling blocks",
+  "cat": "Games",
+  "note": "Blocks stack into one column per week, and a few more keep dropping in.",
+  "h": 316
+ },
+ {
+  "id": "radar-sweep",
+  "title": "radar sweep",
+  "cat": "Space",
+  "note": "A scan line sweeps around and lights up the days it passes. Weeks go around, weekdays go outward.",
+  "h": 558
+ },
+ {
+  "id": "meteor-shower",
+  "title": "meteor shower",
+  "cat": "Space",
+  "note": "Every active day is a streak across the sky, longer and brighter when busier.",
+  "h": 382
+ },
+ {
+  "id": "matrix-rain",
+  "title": "matrix rain",
+  "cat": "Dev",
+  "note": "Falling code with a column for every week. Busier weeks rain brighter.",
+  "h": 432
+ },
+ {
+  "id": "solar-system",
+  "title": "solar system",
+  "cat": "Space",
+  "note": "One planet for each month orbiting a sun. Bigger planets are busier months.",
+  "h": 592
  }
 ]

@@ -129,11 +129,20 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Topographic map | `topographic-map` | Contour lines rise around the weeks you were busiest, like a hiking map. |
 | Barcode | `barcode` | Your year as a product barcode. Thick bars are active days. |
 | DNA helix | `dna-helix` | Two twisting strands with a rung for every active day. |
+| Pulse line | `pulse-line` | A heartbeat monitor with a spike for every active day. The bright pulse keeps scanning along. |
+| Equalizer | `equalizer` | One bar per week that bounces like an audio equalizer, taller for busier weeks. |
+| Snake | `snake` | A snake eats its way across the year, one active day at a time, and starts over at the end. |
+| Pac-man | `pac-man` | A chomping circle eats the days one row at a time, left to right and back again. |
+| Falling blocks | `falling-blocks` | Blocks stack into one column per week, and a few more keep dropping in. |
+| Radar sweep | `radar-sweep` | A scan line sweeps around and lights up the days it passes. Weeks go around, weekdays go outward. |
+| Meteor shower | `meteor-shower` | Every active day is a streak across the sky, longer and brighter when busier. |
+| Matrix rain | `matrix-rain` | Falling code with a column for every week. Busier weeks rain brighter. |
+| Solar system | `solar-system` | One planet for each month orbiting a sun. Bigger planets are busier months. |
 <!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
 
-The gallery also previews more styles that are not ready to use yet. Generators for them are coming.
+Three more styles are previews only, because they need data the contribution graph does not have: a punch card (the hour of each commit), a word cloud (commit messages) and repo bubbles (repository names, which could expose private repos). Each preview says so.
 
 ## Things to know
 
@@ -155,9 +164,9 @@ python generator/generate.py --style skyline --sample --frame terminal --header 
 
 ## Add a style
 
-1. Create `generator/styles/your_style.py` with a `render(days)` function. `days` is a list of `{"date": "YYYY-MM-DD", "count": n}`. Return a dict with `w`, `h`, `body`, `defs`, `title`, `cmd` and `aria`. Optional keys: `deco` (decorations behind the chart), `caption` (the stats line), `foot` (where the chart ends) and `top` (where it starts), so the chart can be shown plain. The existing styles are good examples.
-2. Register it in `generator/styles/__init__.py`.
-3. Run `python generator/build_samples.py` to rebuild `samples/<theme>/<style>.svg` for every theme, then add the style to `META` and `READY` in `gallery.js` and give it a `card(...)` line.
+1. Create `generator/styles/your_style.py` with a `render(days)` function. `days` is a list of `{"date": "YYYY-MM-DD", "count": n}`. Return a dict with `w`, `h`, `body`, `defs`, `title`, `cmd` and `aria`. Optional keys: `deco` (decorations behind the chart), `caption` (the stats line), `foot` (where the chart ends), `top` (where it starts) and `css` (animation rules), so the chart can be shown plain. The existing styles are good examples. A style's name is the file name with dashes, so `your_style.py` is `your-style`.
+2. Add a line for it to `generator/styles/catalog.py`: its name, a title, a category and a one-line description.
+3. Run `python generator/build_samples.py`. It rebuilds the samples in every theme, the list the gallery loads, and the styles table in this README, so the gallery and the README update by themselves.
 
 ## License
 
