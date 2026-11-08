@@ -104,12 +104,12 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Piano roll | `piano-roll` | Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days. |
 | Tree | `tree-growth` | A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day. |
 | Ocean waves | `ocean-waves` | One wave per month, stacked in the sea. Taller swells are busier days. |
-| Space invaders | `space-invaders` | Every active day is an invader. Busier days are bigger, brighter invaders. |
+| Space invaders | `space-invaders` | Every active day is an invader. Busier days are bigger, brighter invaders. The ship slides across the bottom and fires. |
 | RPG status | `rpg-status` | A character sheet built from your year: level, XP and stat bars like HP and mana. |
 | 3D skyline | `skyline` | A 3D city floating in space. One building per day, taller and brighter when you were busier. |
 | Terrain mesh | `terrain-mesh` | A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were. |
 | Dig site | `dig-site` | A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom. |
-| Obby course | `obby-course` | An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks. |
+| Obby course | `obby-course` | An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks, and a runner hops along them. |
 | Block stack | `block-stack` | A falling-block puzzle. One column per month, stacked as high as the month was busy. |
 | Farm plots | `farm-plots` | A farm where every day is a plot. Busy days grow from a seed to a ripe crop. |
 | Test runner | `test-runner` | Test-runner output: a row per month, a dot for every active day and a dash for every quiet one. |
@@ -138,6 +138,11 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Meteor shower | `meteor-shower` | Every active day is a streak across the sky, longer and brighter when busier. |
 | Matrix rain | `matrix-rain` | Falling code with a column for every week. Busier weeks rain brighter. |
 | Solar system | `solar-system` | One planet for each month orbiting a sun. Bigger planets are busier months. |
+| Lunar craters | `lunar-craters` | The moon's surface from orbit. Every active day leaves a crater, bigger and deeper when busier. |
+| Nebula | `nebula` | A soft cloud of gas for every week, blending into one long nebula. Busier weeks are thicker and brighter. |
+| Rocket ascent | `rocket-ascent` | A rocket climbs one flight path, higher with every contribution. Each streak is a burning stage. |
+| Exoplanet light curve | `exoplanet-light-curve` | A telescope's brightness plot with a dot for every day. Busier days dip lower, like a planet crossing a star. |
+| Space station | `space-station` | A truss with a module docked for each active week. Busier weeks get bigger modules, and streaks add solar panels. |
 <!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
