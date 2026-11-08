@@ -1,37 +1,14 @@
-from . import (
-    block_stack,
-    constellation,
-    dig_site,
-    farm_plots,
-    htop_monitor,
-    obby_course,
-    ocean_waves,
-    piano_roll,
-    ridgeline,
-    rpg_status,
-    skyline,
-    space_invaders,
-    spiral_galaxy,
-    terrain_mesh,
-    tree_growth,
-    vinyl_record,
-)
+"""Every module in this folder with a render(days) function is a style.
 
-STYLES = {
-    "block-stack": block_stack.render,
-    "constellation": constellation.render,
-    "dig-site": dig_site.render,
-    "farm-plots": farm_plots.render,
-    "htop-monitor": htop_monitor.render,
-    "obby-course": obby_course.render,
-    "ocean-waves": ocean_waves.render,
-    "piano-roll": piano_roll.render,
-    "ridgeline": ridgeline.render,
-    "rpg-status": rpg_status.render,
-    "skyline": skyline.render,
-    "space-invaders": space_invaders.render,
-    "spiral-galaxy": spiral_galaxy.render,
-    "terrain-mesh": terrain_mesh.render,
-    "tree-growth": tree_growth.render,
-    "vinyl-record": vinyl_record.render,
-}
+The style's name is the module name with dashes, so tree_growth.py is "tree-growth".
+"""
+import importlib
+import pkgutil
+
+STYLES = {}
+for _mod in sorted(pkgutil.iter_modules(__path__), key=lambda m: m.name):
+    if _mod.name == "catalog":
+        continue
+    _module = importlib.import_module(f".{_mod.name}", __name__)
+    if hasattr(_module, "render"):
+        STYLES[_mod.name.replace("_", "-")] = _module.render

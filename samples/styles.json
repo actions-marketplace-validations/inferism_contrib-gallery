@@ -1,0 +1,296 @@
+[
+ {
+  "id": "spiral-galaxy",
+  "title": "spiral galaxy",
+  "cat": "Space",
+  "note": "Your year winds out from the center along a spiral arm. Brighter stars are busier days.",
+  "h": 428
+ },
+ {
+  "id": "constellation",
+  "title": "constellation",
+  "cat": "Space",
+  "note": "Active days are stars. Close days connect into constellations.",
+  "h": 294
+ },
+ {
+  "id": "htop-monitor",
+  "title": "htop monitor",
+  "cat": "Dev",
+  "note": "Months as system-monitor bars with percentages. Shows how busy each month was.",
+  "h": 514
+ },
+ {
+  "id": "ridgeline",
+  "title": "ridgeline mountains",
+  "cat": "3D",
+  "note": "One jagged line per month stacked on black, like the Unknown Pleasures album cover. Peaks are busy days.",
+  "h": 510
+ },
+ {
+  "id": "vinyl-record",
+  "title": "vinyl record",
+  "cat": "Music",
+  "note": "A record with one ring of grooves per month. Every active day is a blip along its ring.",
+  "h": 522
+ },
+ {
+  "id": "piano-roll",
+  "title": "piano roll",
+  "cat": "Music",
+  "note": "Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days.",
+  "h": 288
+ },
+ {
+  "id": "tree-growth",
+  "title": "tree",
+  "cat": "Nature",
+  "note": "A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day.",
+  "h": 510
+ },
+ {
+  "id": "ocean-waves",
+  "title": "ocean waves",
+  "cat": "Nature",
+  "note": "One wave per month, stacked in the sea. Taller swells are busier days.",
+  "h": 480
+ },
+ {
+  "id": "space-invaders",
+  "title": "space invaders",
+  "cat": "Games",
+  "note": "Every active day is an invader. Busier days are bigger, brighter invaders.",
+  "h": 338
+ },
+ {
+  "id": "rpg-status",
+  "title": "RPG status",
+  "cat": "Games",
+  "note": "A character sheet built from your year: level, XP and stat bars like HP and mana.",
+  "h": 314
+ },
+ {
+  "id": "skyline",
+  "title": "3D skyline",
+  "cat": "3D",
+  "note": "A 3D city floating in space. One building per day, taller and brighter when you were busier.",
+  "h": 432
+ },
+ {
+  "id": "terrain-mesh",
+  "title": "terrain mesh",
+  "cat": "3D",
+  "note": "A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were.",
+  "h": 366
+ },
+ {
+  "id": "dig-site",
+  "title": "dig site",
+  "cat": "Games",
+  "note": "A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom.",
+  "h": 325
+ },
+ {
+  "id": "obby-course",
+  "title": "obby course",
+  "cat": "Games",
+  "note": "An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks.",
+  "h": 430
+ },
+ {
+  "id": "block-stack",
+  "title": "block stack",
+  "cat": "Games",
+  "note": "A falling-block puzzle. One column per month, stacked as high as the month was busy.",
+  "h": 520
+ },
+ {
+  "id": "farm-plots",
+  "title": "farm plots",
+  "cat": "Games",
+  "note": "A farm where every day is a plot. Busy days grow from a seed to a ripe crop.",
+  "h": 290
+ },
+ {
+  "id": "test-runner",
+  "title": "test runner",
+  "cat": "Dev",
+  "note": "Test-runner output: a row per month, a dot for every active day and a dash for every quiet one.",
+  "h": 406
+ },
+ {
+  "id": "commit-log",
+  "title": "commit log",
+  "cat": "Dev",
+  "note": "Your ten busiest days, sorted like terminal output with a bar for each.",
+  "h": 418
+ },
+ {
+  "id": "aurora",
+  "title": "aurora",
+  "cat": "Space",
+  "note": "Northern lights: curtains of light that swell in the weeks you were busy.",
+  "h": 392
+ },
+ {
+  "id": "black-hole",
+  "title": "black hole",
+  "cat": "Space",
+  "note": "Your days orbit a black hole on an accretion disk, the newest days closest to the edge.",
+  "h": 362
+ },
+ {
+  "id": "activity-rings",
+  "title": "activity rings",
+  "cat": "Minimal",
+  "note": "Three rings: this week, this month against your best, and your streak against your longest.",
+  "h": 391
+ },
+ {
+  "id": "year-sparkline",
+  "title": "year sparkline",
+  "cat": "Minimal",
+  "note": "The whole year as one smooth line, with your busiest week and today marked.",
+  "h": 244
+ },
+ {
+  "id": "orbit-rings",
+  "title": "orbit rings",
+  "cat": "Space",
+  "note": "One ring per month. The dots on a ring are that month's days.",
+  "h": 534
+ },
+ {
+  "id": "terminal-heatmap",
+  "title": "terminal heatmap",
+  "cat": "Dev",
+  "note": "The usual grid, but drawn with text characters like command output.",
+  "h": 244
+ },
+ {
+  "id": "radial-bars",
+  "title": "radial bars",
+  "cat": "Minimal",
+  "note": "Every day is a spoke around a circle, longer for busier days. It starts at the top and runs clockwise.",
+  "h": 602
+ },
+ {
+  "id": "tower",
+  "title": "tower",
+  "cat": "3D",
+  "note": "A tower with one floor per month. Wider floors and more lit windows mean busier months.",
+  "h": 528
+ },
+ {
+  "id": "streak-timeline",
+  "title": "streak timeline",
+  "cat": "Minimal",
+  "note": "Every streak as a block along one year. Long streaks get a label.",
+  "h": 198
+ },
+ {
+  "id": "moon-phases",
+  "title": "moon phases",
+  "cat": "Space",
+  "note": "Each day is a moon: new when quiet, full when busy. Shows the last 26 weeks.",
+  "h": 293
+ },
+ {
+  "id": "git-graph",
+  "title": "git graph",
+  "cat": "Dev",
+  "note": "A main line with a node for every active week and branches that fork and merge back, like git log --graph.",
+  "h": 252
+ },
+ {
+  "id": "hex-dump",
+  "title": "hex dump",
+  "cat": "Dev",
+  "note": "Each day is one byte. Busy days are bigger hex values, like opening a binary file.",
+  "h": 634
+ },
+ {
+  "id": "topographic-map",
+  "title": "topographic map",
+  "cat": "Nature",
+  "note": "Contour lines rise around the weeks you were busiest, like a hiking map.",
+  "h": 400
+ },
+ {
+  "id": "barcode",
+  "title": "barcode",
+  "cat": "Minimal",
+  "note": "Your year as a product barcode. Thick bars are active days.",
+  "h": 222
+ },
+ {
+  "id": "dna-helix",
+  "title": "DNA helix",
+  "cat": "3D",
+  "note": "Two twisting strands with a rung for every active day.",
+  "h": 226
+ },
+ {
+  "id": "pulse-line",
+  "title": "pulse line",
+  "cat": "Minimal",
+  "note": "A heartbeat monitor with a spike for every active day. The bright pulse keeps scanning along.",
+  "h": 201
+ },
+ {
+  "id": "equalizer",
+  "title": "equalizer",
+  "cat": "Music",
+  "note": "One bar per week that bounces like an audio equalizer, taller for busier weeks.",
+  "h": 284
+ },
+ {
+  "id": "snake",
+  "title": "snake",
+  "cat": "Games",
+  "note": "A snake eats its way across the year, one active day at a time, and starts over at the end.",
+  "h": 195
+ },
+ {
+  "id": "pac-man",
+  "title": "pac-man",
+  "cat": "Games",
+  "note": "A chomping circle eats the days one row at a time, left to right and back again.",
+  "h": 250
+ },
+ {
+  "id": "falling-blocks",
+  "title": "falling blocks",
+  "cat": "Games",
+  "note": "Blocks stack into one column per week, and a few more keep dropping in.",
+  "h": 316
+ },
+ {
+  "id": "radar-sweep",
+  "title": "radar sweep",
+  "cat": "Space",
+  "note": "A scan line sweeps around and lights up the days it passes. Weeks go around, weekdays go outward.",
+  "h": 558
+ },
+ {
+  "id": "meteor-shower",
+  "title": "meteor shower",
+  "cat": "Space",
+  "note": "Every active day is a streak across the sky, longer and brighter when busier.",
+  "h": 382
+ },
+ {
+  "id": "matrix-rain",
+  "title": "matrix rain",
+  "cat": "Dev",
+  "note": "Falling code with a column for every week. Busier weeks rain brighter.",
+  "h": 432
+ },
+ {
+  "id": "solar-system",
+  "title": "solar system",
+  "cat": "Space",
+  "note": "One planet for each month orbiting a sun. Bigger planets are busier months.",
+  "h": 592
+ }
+]

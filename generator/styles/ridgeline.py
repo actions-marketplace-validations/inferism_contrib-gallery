@@ -9,10 +9,12 @@ H = 580
 def render(days):
     peak = peak_of(days)
     rnd = random.Random(14)
-    per = len(days) // 12
+    per = max(1, len(days) // 12)
     out = []
     for m in range(12):
         chunk = days[m * per:(m + 1) * per]
+        if not chunk:
+            continue
         base = 150 + m * 32
         pts = []
         for k, d in enumerate(chunk):

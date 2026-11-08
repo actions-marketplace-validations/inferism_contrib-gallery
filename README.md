@@ -93,28 +93,56 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 
 ## Styles ready to use
 
+<!-- styles:start -->
 | Style | Name to use | What it shows |
 |---|---|---|
-| Spiral galaxy | `spiral-galaxy` | One star per day on a spiral arm, brighter when busier |
-| Htop monitor | `htop-monitor` | Monthly bars with percentages, like a system monitor |
-| Constellation | `constellation` | Active days as stars, joined into constellations |
-| Ridgeline | `ridgeline` | One jagged line per month, stacked |
-| Vinyl record | `vinyl-record` | One ring of grooves per month, every active day a blip |
-| Piano roll | `piano-roll` | Weekdays as piano keys, active days as notes |
-| Tree | `tree-growth` | A branch for every active week, a leaf for every active day |
-| Ocean waves | `ocean-waves` | One wave per month, stacked in the sea |
-| 3D skyline | `skyline` | A 3D city, one building per day |
-| Terrain mesh | `terrain-mesh` | A wireframe landscape where height is how busy you were |
-| Space invaders | `space-invaders` | Active days as invaders, busier days bigger |
-| RPG status | `rpg-status` | A character sheet: level, XP and stat bars |
-| Dig site | `dig-site` | A cross-section of the ground, a shaft for every active week |
-| Obby course | `obby-course` | An obstacle course, a platform for every active week |
-| Block stack | `block-stack` | A falling-block puzzle, one stacked column per month |
-| Farm plots | `farm-plots` | A farm where every day is a plot and busy days grow ripe crops |
+| Spiral galaxy | `spiral-galaxy` | Your year winds out from the center along a spiral arm. Brighter stars are busier days. |
+| Constellation | `constellation` | Active days are stars. Close days connect into constellations. |
+| Htop monitor | `htop-monitor` | Months as system-monitor bars with percentages. Shows how busy each month was. |
+| Ridgeline mountains | `ridgeline` | One jagged line per month stacked on black, like the Unknown Pleasures album cover. Peaks are busy days. |
+| Vinyl record | `vinyl-record` | A record with one ring of grooves per month. Every active day is a blip along its ring. |
+| Piano roll | `piano-roll` | Weekdays are piano keys, weeks run left to right, and every active day is a note. Longer notes are busier days. |
+| Tree | `tree-growth` | A tree grows a branch for every active week. Longer branches are busier weeks, and each leaf is an active day. |
+| Ocean waves | `ocean-waves` | One wave per month, stacked in the sea. Taller swells are busier days. |
+| Space invaders | `space-invaders` | Every active day is an invader. Busier days are bigger, brighter invaders. |
+| RPG status | `rpg-status` | A character sheet built from your year: level, XP and stat bars like HP and mana. |
+| 3D skyline | `skyline` | A 3D city floating in space. One building per day, taller and brighter when you were busier. |
+| Terrain mesh | `terrain-mesh` | A wireframe landscape. Weeks run left to right, weekdays go into the distance, and height is how busy you were. |
+| Dig site | `dig-site` | A cross-section of the ground. Every active week digs a shaft, deeper when busier, with a gem at the bottom. |
+| Obby course | `obby-course` | An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks. |
+| Block stack | `block-stack` | A falling-block puzzle. One column per month, stacked as high as the month was busy. |
+| Farm plots | `farm-plots` | A farm where every day is a plot. Busy days grow from a seed to a ripe crop. |
+| Test runner | `test-runner` | Test-runner output: a row per month, a dot for every active day and a dash for every quiet one. |
+| Commit log | `commit-log` | Your ten busiest days, sorted like terminal output with a bar for each. |
+| Aurora | `aurora` | Northern lights: curtains of light that swell in the weeks you were busy. |
+| Black hole | `black-hole` | Your days orbit a black hole on an accretion disk, the newest days closest to the edge. |
+| Activity rings | `activity-rings` | Three rings: this week, this month against your best, and your streak against your longest. |
+| Year sparkline | `year-sparkline` | The whole year as one smooth line, with your busiest week and today marked. |
+| Orbit rings | `orbit-rings` | One ring per month. The dots on a ring are that month's days. |
+| Terminal heatmap | `terminal-heatmap` | The usual grid, but drawn with text characters like command output. |
+| Radial bars | `radial-bars` | Every day is a spoke around a circle, longer for busier days. It starts at the top and runs clockwise. |
+| Tower | `tower` | A tower with one floor per month. Wider floors and more lit windows mean busier months. |
+| Streak timeline | `streak-timeline` | Every streak as a block along one year. Long streaks get a label. |
+| Moon phases | `moon-phases` | Each day is a moon: new when quiet, full when busy. Shows the last 26 weeks. |
+| Git graph | `git-graph` | A main line with a node for every active week and branches that fork and merge back, like git log --graph. |
+| Hex dump | `hex-dump` | Each day is one byte. Busy days are bigger hex values, like opening a binary file. |
+| Topographic map | `topographic-map` | Contour lines rise around the weeks you were busiest, like a hiking map. |
+| Barcode | `barcode` | Your year as a product barcode. Thick bars are active days. |
+| DNA helix | `dna-helix` | Two twisting strands with a rung for every active day. |
+| Pulse line | `pulse-line` | A heartbeat monitor with a spike for every active day. The bright pulse keeps scanning along. |
+| Equalizer | `equalizer` | One bar per week that bounces like an audio equalizer, taller for busier weeks. |
+| Snake | `snake` | A snake eats its way across the year, one active day at a time, and starts over at the end. |
+| Pac-man | `pac-man` | A chomping circle eats the days one row at a time, left to right and back again. |
+| Falling blocks | `falling-blocks` | Blocks stack into one column per week, and a few more keep dropping in. |
+| Radar sweep | `radar-sweep` | A scan line sweeps around and lights up the days it passes. Weeks go around, weekdays go outward. |
+| Meteor shower | `meteor-shower` | Every active day is a streak across the sky, longer and brighter when busier. |
+| Matrix rain | `matrix-rain` | Falling code with a column for every week. Busier weeks rain brighter. |
+| Solar system | `solar-system` | One planet for each month orbiting a sun. Bigger planets are busier months. |
+<!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
 
-The gallery also previews more styles that are not ready to use yet. Generators for them are coming.
+Three more styles are previews only, because they need data the contribution graph does not have: a punch card (the hour of each commit), a word cloud (commit messages) and repo bubbles (repository names, which could expose private repos). Each preview says so.
 
 ## Things to know
 
@@ -136,9 +164,9 @@ python generator/generate.py --style skyline --sample --frame terminal --header 
 
 ## Add a style
 
-1. Create `generator/styles/your_style.py` with a `render(days)` function. `days` is a list of `{"date": "YYYY-MM-DD", "count": n}`. Return a dict with `w`, `h`, `body`, `defs`, `title`, `cmd` and `aria`. Optional keys: `deco` (decorations behind the chart), `caption` (the stats line), `foot` (where the chart ends) and `top` (where it starts), so the chart can be shown plain. The existing styles are good examples.
-2. Register it in `generator/styles/__init__.py`.
-3. Run `python generator/build_samples.py` to rebuild `samples/<theme>/<style>.svg` for every theme, then add the style to `META` and `READY` in `gallery.js` and give it a `card(...)` line.
+1. Create `generator/styles/your_style.py` with a `render(days)` function. `days` is a list of `{"date": "YYYY-MM-DD", "count": n}`. Return a dict with `w`, `h`, `body`, `defs`, `title`, `cmd` and `aria`. Optional keys: `deco` (decorations behind the chart), `caption` (the stats line), `foot` (where the chart ends), `top` (where it starts) and `css` (animation rules), so the chart can be shown plain. The existing styles are good examples. A style's name is the file name with dashes, so `your_style.py` is `your-style`.
+2. Add a line for it to `generator/styles/catalog.py`: its name, a title, a category and a one-line description.
+3. Run `python generator/build_samples.py`. It rebuilds the samples in every theme, the list the gallery loads, and the styles table in this README, so the gallery and the README update by themselves.
 
 ## License
 
