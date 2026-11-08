@@ -52,4 +52,9 @@ CATALOG = [
     ("rocket-ascent", "rocket ascent", "Space", "A rocket climbs one flight path, higher with every contribution. Each streak is a burning stage."),
     ("exoplanet-light-curve", "exoplanet light curve", "Space", "A telescope's brightness plot with a dot for every day. Busier days dip lower, like a planet crossing a star."),
     ("space-station", "space station", "Space", "A truss with a module docked for each active week. Busier weeks get bigger modules, and streaks add solar panels."),
+    ("flame-graph", "flame graph", "Dev", "A profiler flame graph: the year at the bottom, then months, weeks and days stacked above. Busy stretches are wide and quiet ones squeeze out."),
+    ("year-diff", "year diff", "Dev", "A unified diff of this year against the year before. Plus lines are weeks that beat it and minus lines are weeks that fell short."),
+    ("ci-pipeline", "ci pipeline", "Dev", "A CI run with one stage per month. Busy months pass, slow ones warn, empty ones fail, and busier months take longer to build."),
+    ("minimap", "minimap", "Dev", "A code editor with its scroll minimap: one line for every day, longer when busier, and a viewport box on the latest 30 days."),
+    ("heap-map", "heap map", "Dev", "A memory allocator view. Streaks are allocated blocks sized by their length, gaps are free blocks, and the legend gives the fragmentation."),
 ]

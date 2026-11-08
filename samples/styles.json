@@ -327,5 +327,40 @@
   "cat": "Space",
   "note": "A truss with a module docked for each active week. Busier weeks get bigger modules, and streaks add solar panels.",
   "h": 302
+ },
+ {
+  "id": "flame-graph",
+  "title": "flame graph",
+  "cat": "Dev",
+  "note": "A profiler flame graph: the year at the bottom, then months, weeks and days stacked above. Busy stretches are wide and quiet ones squeeze out.",
+  "h": 256
+ },
+ {
+  "id": "year-diff",
+  "title": "year diff",
+  "cat": "Dev",
+  "note": "A unified diff of this year against the year before. Plus lines are weeks that beat it and minus lines are weeks that fell short.",
+  "h": 697
+ },
+ {
+  "id": "ci-pipeline",
+  "title": "ci pipeline",
+  "cat": "Dev",
+  "note": "A CI run with one stage per month. Busy months pass, slow ones warn, empty ones fail, and busier months take longer to build.",
+  "h": 354
+ },
+ {
+  "id": "minimap",
+  "title": "minimap",
+  "cat": "Dev",
+  "note": "A code editor with its scroll minimap: one line for every day, longer when busier, and a viewport box on the latest 30 days.",
+  "h": 662
+ },
+ {
+  "id": "heap-map",
+  "title": "heap map",
+  "cat": "Dev",
+  "note": "A memory allocator view. Streaks are allocated blocks sized by their length, gaps are free blocks, and the legend gives the fragmentation.",
+  "h": 432
  }
 ]
