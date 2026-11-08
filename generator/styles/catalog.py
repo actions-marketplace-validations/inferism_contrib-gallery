@@ -47,4 +47,9 @@ CATALOG = [
     ("meteor-shower", "meteor shower", "Space", "Every active day is a streak across the sky, longer and brighter when busier."),
     ("matrix-rain", "matrix rain", "Dev", "Falling code with a column for every week. Busier weeks rain brighter."),
     ("solar-system", "solar system", "Space", "One planet for each month orbiting a sun. Bigger planets are busier months."),
+    ("lunar-craters", "lunar craters", "Space", "The moon's surface from orbit. Every active day leaves a crater, bigger and deeper when busier."),
+    ("nebula", "nebula", "Space", "A soft cloud of gas for every week, blending into one long nebula. Busier weeks are thicker and brighter."),
+    ("rocket-ascent", "rocket ascent", "Space", "A rocket climbs one flight path, higher with every contribution. Each streak is a burning stage."),
+    ("exoplanet-light-curve", "exoplanet light curve", "Space", "A telescope's brightness plot with a dot for every day. Busier days dip lower, like a planet crossing a star."),
+    ("space-station", "space station", "Space", "A truss with a module docked for each active week. Busier weeks get bigger modules, and streaks add solar panels."),
 ]
