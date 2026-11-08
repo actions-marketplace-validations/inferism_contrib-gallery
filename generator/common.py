@@ -240,9 +240,9 @@ def frame(chart, accent="#ffffff", mode="auto", frame_style="none", header="none
 
 def _frame(chart, frame_style, header, details):
     w, h0 = chart["w"], chart["h"]
-    shift = max(0, chart.get("top", 84) - HEADER_ROOM[header])
+    shift = round(max(0, chart.get("top", 84) - HEADER_ROOM[header]))
     bottom = h0 if (details or not chart.get("foot")) else chart["foot"] + 22
-    h = bottom - shift
+    h = round(bottom - shift)
 
     parts = []
     if details:

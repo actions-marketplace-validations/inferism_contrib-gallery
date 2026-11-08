@@ -38,4 +38,13 @@ CATALOG = [
     ("topographic-map", "topographic map", "Nature", "Contour lines rise around the weeks you were busiest, like a hiking map."),
     ("barcode", "barcode", "Minimal", "Your year as a product barcode. Thick bars are active days."),
     ("dna-helix", "DNA helix", "3D", "Two twisting strands with a rung for every active day."),
+    ("pulse-line", "pulse line", "Minimal", "A heartbeat monitor with a spike for every active day. The bright pulse keeps scanning along."),
+    ("equalizer", "equalizer", "Music", "One bar per week that bounces like an audio equalizer, taller for busier weeks."),
+    ("snake", "snake", "Games", "A snake eats its way across the year, one active day at a time, and starts over at the end."),
+    ("pac-man", "pac-man", "Games", "A chomping circle eats the days one row at a time, left to right and back again."),
+    ("falling-blocks", "falling blocks", "Games", "Blocks stack into one column per week, and a few more keep dropping in."),
+    ("radar-sweep", "radar sweep", "Space", "A scan line sweeps around and lights up the days it passes. Weeks go around, weekdays go outward."),
+    ("meteor-shower", "meteor shower", "Space", "Every active day is a streak across the sky, longer and brighter when busier."),
+    ("matrix-rain", "matrix rain", "Dev", "Falling code with a column for every week. Busier weeks rain brighter."),
+    ("solar-system", "solar system", "Space", "One planet for each month orbiting a sun. Bigger planets are busier months."),
 ]
