@@ -112,6 +112,12 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Obby course | `obby-course` | An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks. |
 | Block stack | `block-stack` | A falling-block puzzle. One column per month, stacked as high as the month was busy. |
 | Farm plots | `farm-plots` | A farm where every day is a plot. Busy days grow from a seed to a ripe crop. |
+| Test runner | `test-runner` | Test-runner output: a row per month, a dot for every active day and a dash for every quiet one. |
+| Commit log | `commit-log` | Your ten busiest days, sorted like terminal output with a bar for each. |
+| Aurora | `aurora` | Northern lights: curtains of light that swell in the weeks you were busy. |
+| Black hole | `black-hole` | Your days orbit a black hole on an accretion disk, the newest days closest to the edge. |
+| Activity rings | `activity-rings` | Three rings: this week, this month against your best, and your streak against your longest. |
+| Year sparkline | `year-sparkline` | The whole year as one smooth line, with your busiest week and today marked. |
 <!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.

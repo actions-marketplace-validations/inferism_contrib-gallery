@@ -110,5 +110,47 @@
   "cat": "Games",
   "note": "A farm where every day is a plot. Busy days grow from a seed to a ripe crop.",
   "h": 290
+ },
+ {
+  "id": "test-runner",
+  "title": "test runner",
+  "cat": "Dev",
+  "note": "Test-runner output: a row per month, a dot for every active day and a dash for every quiet one.",
+  "h": 406
+ },
+ {
+  "id": "commit-log",
+  "title": "commit log",
+  "cat": "Dev",
+  "note": "Your ten busiest days, sorted like terminal output with a bar for each.",
+  "h": 418
+ },
+ {
+  "id": "aurora",
+  "title": "aurora",
+  "cat": "Space",
+  "note": "Northern lights: curtains of light that swell in the weeks you were busy.",
+  "h": 392
+ },
+ {
+  "id": "black-hole",
+  "title": "black hole",
+  "cat": "Space",
+  "note": "Your days orbit a black hole on an accretion disk, the newest days closest to the edge.",
+  "h": 362
+ },
+ {
+  "id": "activity-rings",
+  "title": "activity rings",
+  "cat": "Minimal",
+  "note": "Three rings: this week, this month against your best, and your streak against your longest.",
+  "h": 391
+ },
+ {
+  "id": "year-sparkline",
+  "title": "year sparkline",
+  "cat": "Minimal",
+  "note": "The whole year as one smooth line, with your busiest week and today marked.",
+  "h": 244
  }
 ]

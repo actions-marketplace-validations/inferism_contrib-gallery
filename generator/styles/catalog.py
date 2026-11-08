@@ -21,4 +21,10 @@ CATALOG = [
     ("obby-course", "obby course", "Games", "An obstacle course of floating platforms, one for each active week. Higher platforms are busier weeks."),
     ("block-stack", "block stack", "Games", "A falling-block puzzle. One column per month, stacked as high as the month was busy."),
     ("farm-plots", "farm plots", "Games", "A farm where every day is a plot. Busy days grow from a seed to a ripe crop."),
+    ("test-runner", "test runner", "Dev", "Test-runner output: a row per month, a dot for every active day and a dash for every quiet one."),
+    ("commit-log", "commit log", "Dev", "Your ten busiest days, sorted like terminal output with a bar for each."),
+    ("aurora", "aurora", "Space", "Northern lights: curtains of light that swell in the weeks you were busy."),
+    ("black-hole", "black hole", "Space", "Your days orbit a black hole on an accretion disk, the newest days closest to the edge."),
+    ("activity-rings", "activity rings", "Minimal", "Three rings: this week, this month against your best, and your streak against your longest."),
+    ("year-sparkline", "year sparkline", "Minimal", "The whole year as one smooth line, with your busiest week and today marked."),
 ]

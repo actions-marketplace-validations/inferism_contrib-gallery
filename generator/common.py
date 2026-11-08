@@ -280,7 +280,8 @@ def _frame(chart, frame_style, header, details):
         f'{chart.get("defs", "")}</defs>\n'
         f"<style>text {{ font-family: {FONT}; }} .dim {{ fill: {DIM}; }} .txt {{ fill: {TEXT}; }} .hi {{ fill: {BRIGHT}; }} "
         ".blink { animation: blink 1.1s steps(1) infinite; } @keyframes blink { 50% { opacity: 0; } } "
-        ".tw { animation: tw 4s ease-in-out infinite; } @keyframes tw { 50% { opacity: 0.25; } }</style>\n"
+        ".tw { animation: tw 4s ease-in-out infinite; } @keyframes tw { 50% { opacity: 0.25; } } "
+        f'{chart.get("css", "")} @media (prefers-reduced-motion: reduce) {{ * {{ animation: none !important; }} }}</style>\n'
         f'<rect x="{x}" y="{y}" width="{bw}" height="{bh}" rx="{r}" fill="{BG}"/>\n'
         f'{dots}<g clip-path="url(#panel)">{body}</g>\n{title}\n{edge}</svg>\n'
     )
