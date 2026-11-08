@@ -10,7 +10,7 @@ inputs:
     description: "Style name, for example spiral-galaxy"
     required: true
   theme:
-    description: "Color theme: mono, ice, ember, matrix, sakura or violet"
+    description: "Color theme: mono, ice, ember, matrix, sakura, violet, gold, rose, teal, lime, indigo, orchid, sand, aqua, slate or azure"
     required: false
     default: "mono"
   accent:

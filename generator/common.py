@@ -131,6 +131,16 @@ THEMES = {
     "matrix": "#4ade80",
     "sakura": "#f9a8d4",
     "violet": "#c4b5fd",
+    "gold": "#facc15",
+    "rose": "#fb7185",
+    "teal": "#2dd4bf",
+    "lime": "#a3e635",
+    "indigo": "#818cf8",
+    "orchid": "#e879f9",
+    "sand": "#d6c3a0",
+    "aqua": "#22d3ee",
+    "slate": "#94a3b8",
+    "azure": "#3b82f6",
 }
 
 # accent colors that read well on a light page, for each theme color
@@ -141,6 +151,16 @@ LIGHT_ACCENTS = {
     "#4ade80": "#15803d",
     "#f9a8d4": "#be185d",
     "#c4b5fd": "#6d28d9",
+    "#facc15": "#a16207",
+    "#fb7185": "#be123c",
+    "#2dd4bf": "#0f766e",
+    "#a3e635": "#4d7c0f",
+    "#818cf8": "#4338ca",
+    "#e879f9": "#a21caf",
+    "#d6c3a0": "#6b5a3e",
+    "#22d3ee": "#0e7490",
+    "#94a3b8": "#475569",
+    "#3b82f6": "#1d4ed8",
 }
 
 # the neutral colors the styles draw with, and how strongly each one picks up the accent

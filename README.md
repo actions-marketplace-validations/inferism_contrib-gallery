@@ -19,7 +19,7 @@ Pick a style, copy two snippets, and a GitHub Action keeps the chart on your pro
 | `header` | `none` (default), `title`, `terminal` | The text above the chart. `title` is one line with the style's name, `terminal` adds a command line under it. |
 | `details` | `hide` (default), `show` | `show` adds the decorations (stars, a planet, a score) and a stats line under the chart. |
 | `background` | a color like `"#0a0a0a"` | The page color behind the chart, for READMEs with a custom background. |
-| `theme` | `mono` (default), `ice`, `ember`, `matrix`, `sakura`, `violet` | The accent color. |
+| `theme` | `mono` (default), `ice`, `ember`, `matrix`, `sakura`, `violet`, `gold`, `rose`, `teal`, `lime`, `indigo`, `orchid`, `sand`, `aqua`, `slate`, `azure` | The accent color. |
 | `accent` | a color like `"#ff66aa"` | Your own accent color. Overrides `theme`. |
 
 The plain default:

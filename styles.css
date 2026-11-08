@@ -35,7 +35,7 @@ header.top p{margin:0;max-width:62ch;font-size:18px;color:var(--text)}
 .tabs button.on{background:var(--hi);color:#0b0b0c;border-color:var(--hi)}
 .tabs button.on i{color:#3a3a3f}
 
-.themes{flex:none;display:flex;align-items:center;gap:10px;color:var(--dim);font-size:14px}
+.themes{flex:none;display:flex;flex-wrap:wrap;align-items:center;gap:10px;max-width:460px;color:var(--dim);font-size:14px}
 .themes span{margin-right:4px}
 .themes button{width:24px;height:24px;padding:0;border:0;border-radius:50%;background:var(--sw);cursor:pointer;box-shadow:0 0 0 1.5px var(--line-strong);transition:box-shadow .2s var(--ease),transform .2s var(--ease)}
 .themes button:hover{transform:scale(1.12)}

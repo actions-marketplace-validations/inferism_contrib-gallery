@@ -10,7 +10,7 @@ const META={
   15:{id:'repo-bubbles',cat:'Minimal',why:'Needs repository names, which could expose private repos on a public profile.'}
 };
 const REPO='inferism/contrib-gallery';
-const THEMES={mono:'#ffffff',ice:'#7dd3fc',ember:'#fb923c',matrix:'#4ade80',sakura:'#f9a8d4',violet:'#c4b5fd'};
+const THEMES={mono:'#ffffff',ice:'#7dd3fc',ember:'#fb923c',matrix:'#4ade80',sakura:'#f9a8d4',violet:'#c4b5fd',gold:'#facc15',rose:'#fb7185',teal:'#2dd4bf',lime:'#a3e635',indigo:'#818cf8',orchid:'#e879f9',sand:'#d6c3a0',aqua:'#22d3ee',slate:'#94a3b8',azure:'#3b82f6'};
 let theme='mono',ACC=[255,255,255],current=null;
 const sampleUrl=id=>`samples/${theme}/${id}.svg`;
 
