@@ -57,4 +57,9 @@ CATALOG = [
     ("ci-pipeline", "ci pipeline", "Dev", "A CI run with one stage per month. Busy months pass, slow ones warn, empty ones fail, and busier months take longer to build."),
     ("minimap", "minimap", "Dev", "A code editor with its scroll minimap: one line for every day, longer when busier, and a viewport box on the latest 30 days."),
     ("heap-map", "heap map", "Dev", "A memory allocator view. Streaks are allocated blocks sized by their length, gaps are free blocks, and the legend gives the fragmentation."),
+    ("tree-rings", "tree rings", "Nature", "A cut tree trunk with one ring for each month, oldest in the centre. Thicker rings are busier months, and the best one is labelled."),
+    ("coral-reef", "coral reef", "Nature", "A reef grows up from the seabed with a coral branch for every active week. Busier weeks grow taller and fork more, and quiet stretches leave bleached stubs."),
+    ("mycelium", "mycelium", "Nature", "A fungal network spreads from the start of the year on the left to today on the right. Streaks grow thick trunks, single days stay thin wisps, and the five busiest days sprout mushrooms."),
+    ("river", "river", "Nature", "A river seen from above flows through the year. It widens and bends harder in busy weeks, and quiet weeks leave a dry dotted riverbed."),
+    ("honeycomb", "honeycomb", "Nature", "A hive with one hexagonal cell for every day. Honey fills each cell up to that day's count against the peak, empty days stay open, and bees hover over the busiest week."),
 ]

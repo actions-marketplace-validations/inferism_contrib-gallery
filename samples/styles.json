@@ -362,5 +362,40 @@
   "cat": "Dev",
   "note": "A memory allocator view. Streaks are allocated blocks sized by their length, gaps are free blocks, and the legend gives the fragmentation.",
   "h": 432
+ },
+ {
+  "id": "tree-rings",
+  "title": "tree rings",
+  "cat": "Nature",
+  "note": "A cut tree trunk with one ring for each month, oldest in the centre. Thicker rings are busier months, and the best one is labelled.",
+  "h": 646
+ },
+ {
+  "id": "coral-reef",
+  "title": "coral reef",
+  "cat": "Nature",
+  "note": "A reef grows up from the seabed with a coral branch for every active week. Busier weeks grow taller and fork more, and quiet stretches leave bleached stubs.",
+  "h": 554
+ },
+ {
+  "id": "mycelium",
+  "title": "mycelium",
+  "cat": "Nature",
+  "note": "A fungal network spreads from the start of the year on the left to today on the right. Streaks grow thick trunks, single days stay thin wisps, and the five busiest days sprout mushrooms.",
+  "h": 618
+ },
+ {
+  "id": "river",
+  "title": "river",
+  "cat": "Nature",
+  "note": "A river seen from above flows through the year. It widens and bends harder in busy weeks, and quiet weeks leave a dry dotted riverbed.",
+  "h": 542
+ },
+ {
+  "id": "honeycomb",
+  "title": "honeycomb",
+  "cat": "Nature",
+  "note": "A hive with one hexagonal cell for every day. Honey fills each cell up to that day's count against the peak, empty days stay open, and bees hover over the busiest week.",
+  "h": 664
  }
 ]

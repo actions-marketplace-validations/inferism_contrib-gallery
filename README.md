@@ -148,6 +148,11 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Ci pipeline | `ci-pipeline` | A CI run with one stage per month. Busy months pass, slow ones warn, empty ones fail, and busier months take longer to build. |
 | Minimap | `minimap` | A code editor with its scroll minimap: one line for every day, longer when busier, and a viewport box on the latest 30 days. |
 | Heap map | `heap-map` | A memory allocator view. Streaks are allocated blocks sized by their length, gaps are free blocks, and the legend gives the fragmentation. |
+| Tree rings | `tree-rings` | A cut tree trunk with one ring for each month, oldest in the centre. Thicker rings are busier months, and the best one is labelled. |
+| Coral reef | `coral-reef` | A reef grows up from the seabed with a coral branch for every active week. Busier weeks grow taller and fork more, and quiet stretches leave bleached stubs. |
+| Mycelium | `mycelium` | A fungal network spreads from the start of the year on the left to today on the right. Streaks grow thick trunks, single days stay thin wisps, and the five busiest days sprout mushrooms. |
+| River | `river` | A river seen from above flows through the year. It widens and bends harder in busy weeks, and quiet weeks leave a dry dotted riverbed. |
+| Honeycomb | `honeycomb` | A hive with one hexagonal cell for every day. Honey fills each cell up to that day's count against the peak, empty days stay open, and bees hover over the busiest week. |
 <!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.
