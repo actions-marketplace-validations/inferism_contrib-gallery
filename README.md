@@ -118,6 +118,17 @@ Other inputs: `username` (default: the repository owner), `token` (default: the 
 | Black hole | `black-hole` | Your days orbit a black hole on an accretion disk, the newest days closest to the edge. |
 | Activity rings | `activity-rings` | Three rings: this week, this month against your best, and your streak against your longest. |
 | Year sparkline | `year-sparkline` | The whole year as one smooth line, with your busiest week and today marked. |
+| Orbit rings | `orbit-rings` | One ring per month. The dots on a ring are that month's days. |
+| Terminal heatmap | `terminal-heatmap` | The usual grid, but drawn with text characters like command output. |
+| Radial bars | `radial-bars` | Every day is a spoke around a circle, longer for busier days. It starts at the top and runs clockwise. |
+| Tower | `tower` | A tower with one floor per month. Wider floors and more lit windows mean busier months. |
+| Streak timeline | `streak-timeline` | Every streak as a block along one year. Long streaks get a label. |
+| Moon phases | `moon-phases` | Each day is a moon: new when quiet, full when busy. Shows the last 26 weeks. |
+| Git graph | `git-graph` | A main line with a node for every active week and branches that fork and merge back, like git log --graph. |
+| Hex dump | `hex-dump` | Each day is one byte. Busy days are bigger hex values, like opening a binary file. |
+| Topographic map | `topographic-map` | Contour lines rise around the weeks you were busiest, like a hiking map. |
+| Barcode | `barcode` | Your year as a product barcode. Thick bars are active days. |
+| DNA helix | `dna-helix` | Two twisting strands with a rung for every active day. |
 <!-- styles:end -->
 
 The game styles are inspired by digging, obstacle-course, falling-block and farming games. They use only simple shapes drawn for this project, and they are not affiliated with any game.

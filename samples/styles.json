@@ -152,5 +152,82 @@
   "cat": "Minimal",
   "note": "The whole year as one smooth line, with your busiest week and today marked.",
   "h": 244
+ },
+ {
+  "id": "orbit-rings",
+  "title": "orbit rings",
+  "cat": "Space",
+  "note": "One ring per month. The dots on a ring are that month's days.",
+  "h": 534
+ },
+ {
+  "id": "terminal-heatmap",
+  "title": "terminal heatmap",
+  "cat": "Dev",
+  "note": "The usual grid, but drawn with text characters like command output.",
+  "h": 244
+ },
+ {
+  "id": "radial-bars",
+  "title": "radial bars",
+  "cat": "Minimal",
+  "note": "Every day is a spoke around a circle, longer for busier days. It starts at the top and runs clockwise.",
+  "h": 602
+ },
+ {
+  "id": "tower",
+  "title": "tower",
+  "cat": "3D",
+  "note": "A tower with one floor per month. Wider floors and more lit windows mean busier months.",
+  "h": 528
+ },
+ {
+  "id": "streak-timeline",
+  "title": "streak timeline",
+  "cat": "Minimal",
+  "note": "Every streak as a block along one year. Long streaks get a label.",
+  "h": 198
+ },
+ {
+  "id": "moon-phases",
+  "title": "moon phases",
+  "cat": "Space",
+  "note": "Each day is a moon: new when quiet, full when busy. Shows the last 26 weeks.",
+  "h": 293
+ },
+ {
+  "id": "git-graph",
+  "title": "git graph",
+  "cat": "Dev",
+  "note": "A main line with a node for every active week and branches that fork and merge back, like git log --graph.",
+  "h": 252
+ },
+ {
+  "id": "hex-dump",
+  "title": "hex dump",
+  "cat": "Dev",
+  "note": "Each day is one byte. Busy days are bigger hex values, like opening a binary file.",
+  "h": 634
+ },
+ {
+  "id": "topographic-map",
+  "title": "topographic map",
+  "cat": "Nature",
+  "note": "Contour lines rise around the weeks you were busiest, like a hiking map.",
+  "h": 400
+ },
+ {
+  "id": "barcode",
+  "title": "barcode",
+  "cat": "Minimal",
+  "note": "Your year as a product barcode. Thick bars are active days.",
+  "h": 222
+ },
+ {
+  "id": "dna-helix",
+  "title": "DNA helix",
+  "cat": "3D",
+  "note": "Two twisting strands with a rung for every active day.",
+  "h": 226
  }
 ]
